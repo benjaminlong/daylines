@@ -1,0 +1,370 @@
+// Variables persos
+@widthTopic :20%;
+@height-header:@navbar-height;
+@height-image-section:@height-header;
+@height-img-active-indicator:5px;
+@margin-logo:10px;
+
+//Autres variables modifiées
+@navbar-height:75px;
+
+#header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding-left:15px;
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: -200%;
+		z-index: -1;
+		display: block;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0,0,0,0.3)), to(rgba(0,0,0,0)));
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0));
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0));
+		background-image: -o-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0));
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
+		background-repeat: repeat-x;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d000000', endColorstr='#00000000', GradientType=0);			
+	}	
+}
+
+
+#first-section{	
+	height: 100vh;	
+	.titre{
+		color: white;
+		margin-top: 0px;
+		position: fixed;
+		width: 100%;
+		h2{
+			font-size: 30px;
+			color: white;
+		}
+		.channel{
+			background-color: white;
+			height: 40px;
+		}
+	}	
+}
+
+#section-images{
+	position: absolute;
+	width: 100%;
+	top: 100%;	
+	height: @height-image-section;
+	margin-top: -@height-image-section;
+	overflow: hidden;			
+	.box-shadow(0 2px 3px rgba(0,0,0,.1));
+	.images {
+		font-size: 0;/*Important, permet d'éviter des gaps entre les images*/
+		position: absolute;
+		bottom: 0;
+		margin: 0;
+		padding: 0;
+		white-space: nowrap;
+		width: 100%;
+		.topic {
+			display: inline-block;
+			font-size: 1em;
+			width: @widthTopic;
+			a{
+				position: relative;
+				display: block;
+				overflow: hidden;
+				height: 100%;
+				img{
+					vertical-align: baseline;
+					width: 100%;	
+					min-height: 100%;			
+				}
+				.text{
+					padding-bottom: 2* @height-img-active-indicator; 
+					opacity: 0;
+					.transition(all 0.2s ease);
+					font-size: @font-size-base;
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					text-align: center;
+					color: rgba(255, 255, 255, 0.8);
+					z-index: 1;
+				}	
+				.shadow{
+					opacity: 0;
+					.transition(all 0.2s ease);					
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: @height-image-section;
+					z-index: 0;
+					display: block;
+					background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.3)));
+					background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
+					background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
+					background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
+					background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+					background-repeat: repeat-x;
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d000000', endColorstr='#00000000', GradientType=0);			
+				}				
+				&:hover{
+					.text{
+						opacity: 1;
+						color: white;
+					}
+					.shadow{
+						opacity: 1;
+					}
+				}					
+				&:after{
+					content: "";
+					position: relative;
+					bottom: 0px;
+					height: 0px;
+					margin-bottom: 0px;					
+					display: block;
+					background-color: @brand-primary;		
+					.transition(all 0.2s ease);
+				}						
+			}
+		}			
+		.topic.active a:after, .topic.inactive a:hover:after{
+			bottom: @height-img-active-indicator;
+			height: @height-img-active-indicator;
+			margin-bottom: -@height-img-active-indicator;						
+		}
+		.topic.active{
+			.text,.shadow{
+				opacity: 1;
+			}
+		}
+	}	
+}	
+
+#navbar{
+	.box-shadow(0 2px 3px rgba(0,0,0,.1));
+	height: @navbar-height;
+	.dropdown{
+		margin-left: 50px;
+		font-size: 25px;
+		.dropdown-toggle{
+			padding: 0px;
+		}
+		.channel{
+			max-height: @navbar-height - 4* @margin-logo;
+			margin: 2*@margin-logo 0px;
+		}
+		.dropdown-menu{
+			font-size: 20px;
+		}
+	}
+	.ranking{
+		margin-right: 7%;
+		li{
+			a{
+				height: @navbar-height;
+				font-size: @font-size-large;
+				padding-top: 0px;
+				padding-bottom: 0px;	
+				line-height: @navbar-height;			
+				.transition(all 0.2s ease);
+				.icon{
+					font-size: @font-size-large * 1.1;
+				}
+				.text{
+					font-weight: 400;					
+					display: none;
+					letter-spacing: 0.01;					
+				}
+			}
+			a:hover{
+				border-bottom: 5px solid @brand-primary;
+			}		
+			a.active{
+				border-bottom: 5px solid @brand-primary;
+			}			
+		}
+	}
+}
+
+#main{
+	background-color: white;
+	.container{
+		background-color: white;			
+		//position: relative;
+		width: 100%;
+		min-height: 80%;		
+	}
+	.titre{
+		h1{
+			font-size: 40px;
+		}
+		h4{
+			font-size: 18px;
+			font-weight: 300;
+			a{
+				color: lighten(@brand-primary, 10%);
+				.transition(color 0.2s ease);
+				&:hover{
+					color: @brand-primary;
+				}
+			}
+		}
+	}
+	.row.tweet{
+		padding: 40px 40px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		.profile{
+			img{
+				width: 100%;
+				max-width: 100px;
+				.img-circle();
+			}
+		}
+		.text{
+			.handle,.nom{
+				text-align: left;
+				font-size: 20px;				
+			}				
+			.nom{
+				font-weight: bold;
+			}		
+			.handle{
+				margin-left: 20px;
+			}
+			p{
+				padding-top: 10px;
+				font-size: 23px;
+				font-weight: 400;
+				color: @gray-dark;
+			}	
+		}
+		.numbers{
+			font-size: 20px;
+			color: @brand-primary;
+			vertical-align: middle;		
+			.number{
+				display: block;
+				margin: 10px 0px;
+			}	
+		}
+	}	
+	.separation{
+		height: 1px;
+		width: 20%;
+		margin: auto;
+		background-color: lighten(@gray-light,30%);
+	}
+}
+
+#section-background{
+	.section-background-image{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		min-width: 100%;
+		}
+	}
+	.net{
+		z-index: -2;			
+	}
+	.blur{
+		z-index: -1;		
+}		
+
+// Pour la section-iamges : permet de passer d'une rangée de 10 à une rangée de 5 par exemple. 
+@media (min-width: @screen-md-min) {
+	.section-images{
+		.images .topic.active:before, .topic{
+				width: @widthTopic;
+		}	
+	}	
+}
+@media (max-width: @screen-md-min) {
+	.section-images{
+		.images .topic.active:before, .topic{
+				width: @widthTopic;
+		}	
+	}	
+}
+@media (min-width: @screen-sm-min) {
+	#main{
+		.row{
+			width: 0.75 * @screen-sm-min;
+			margin: 30px auto;
+		}
+	}
+}
+@media (min-width: @screen-md-min) {
+	#main{
+		.row{
+			width: 0.75 * @screen-md-min;
+			margin: 30px auto;
+		}
+	}
+}
+@media (min-width: @screen-lg-min) {
+	#main{
+		.row{
+			width: 0.75 * @screen-lg-min;
+			margin: 30px auto;
+		}
+	}
+}
+
+.logo{
+	.pull-left();
+	a{
+		line-height: @navbar-height;
+	}
+	img{
+		max-height: @navbar-height - 2* @margin-logo;
+		margin: @margin-logo;
+	}
+	.titre{
+		margin-left: 30px;
+		font-weight: bold;
+		font-size: 25px;		
+		line-height: @navbar-height;
+		color: @brand-primary;
+	}
+}	
+
+.titre{
+	text-align: center;	
+	h1,h2{
+		line-height: 1;
+		letter-spacing: 0.0em;	
+	}
+	h1{
+		font-weight: bold;
+		font-size: 60px;		
+	}
+	h2{
+		font-weight: 300;
+		font-size: 30px;
+		color:  rgba(255,255,255,0.65);
+	}
+}
+
+.wrapper-images{
+	height: 0px !important;
+	#section-images.stuck{
+		z-index: 1;
+		position: fixed;
+		top: @height-image-section;
+	}	
+}
+.wrapper-navbar{
+	#navbar.stuck{
+		width: 100%;
+		z-index: 1;
+		position: fixed;
+		top: @height-image-section;
+	}	
+}

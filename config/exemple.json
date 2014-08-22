@@ -1,0 +1,89 @@
+Data 
+[
+  [
+     {
+     "created_at":"Fri Aug 22 21:48:43 +0000 2014",
+     "id":502935421009924096,
+     "id_str":"502935421009924096",
+     "text":"Un policier jug\u00e9 pour cannibalisme en Allemagne http:\/\/t.co\/Y55M9ZkpNj",
+     "source":"\u003ca href=\"http:\/\/twitterfeed.com\" rel=\"nofollow\"\u003etwitterfeed\u003c\/a\u003e",
+     "truncated":false,
+     "in_reply_to_status_id":null,
+     "in_reply_to_status_id_str":null,
+     "in_reply_to_user_id":null,
+     "in_reply_to_user_id_str":null,
+     "in_reply_to_screen_name":null,
+     "user":{
+     	"id":8350912,
+	    "id_str":"8350912",
+	    "name":"Le Figaro",
+	    "screen_name":"Le_Figaro",
+	    "location":"France",
+	    "description":"Actualit\u00e9s, \u00e9conomie, politique, culture et divertissements.Le Figaro, premier quotidien g\u00e9n\u00e9raliste et premier site d'information g\u00e9n\u00e9raliste en France.",
+	    "url":"http:\/\/t.co\/ZfLEgIKdrw",
+	    "entities": {
+	    	"url":{
+	    		"urls":[{
+	    			"url":"http:\/\/t.co\/ZfLEgIKdrw",
+	    			"expanded_url":"http:\/\/www.lefigaro.fr",
+	    			"display_url":"lefigaro.fr",
+	    			"indices":[0,22]
+	   			}]
+	     	},
+	   		"description":{
+	     		"urls":[]
+	     	}
+	    },
+     	"protected":false,
+     	"followers_count":768001,
+     	"friends_count":385,
+     	"listed_count":8544,
+     	"created_at":"Wed Aug 22 07:16:46 +0000 2007",
+     	"favourites_count":779,"utc_offset":7200,
+     	"time_zone":"Paris",
+     	"geo_enabled":true,
+     	"verified":true,
+     	"statuses_count":126123,
+     	"lang":"fr",
+     	"contributors_enabled":false,
+     	"is_translator":false,
+     	"is_translation_enabled":true,
+     	"profile_background_color":"3B79B5",
+     	"profile_background_image_url":"http:\/\/pbs.twimg.com\/profile_background_images\/11951762\/backtwitt.png",
+     	"profile_background_image_url_https":"https:\/\/pbs.twimg.com\/profile_background_images\/11951762\/backtwitt.png",
+     	"profile_background_tile":false,
+     	"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/502075046278340608\/Pr4QUAKy_normal.jpeg",
+     	"profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/502075046278340608\/Pr4QUAKy_normal.jpeg",
+     	"profile_link_color":"003872",
+     	"profile_sidebar_border_color":"C7C7C7",
+     	"profile_sidebar_fill_color":"E5E5E5",
+     	"profile_text_color":"333333",
+     	"profile_use_background_image":true,
+     	"default_profile":false,
+     	"default_profile_image":false,
+     	"following":false,
+     	"follow_request_sent":false,
+     	"notifications":false
+    },
+    "geo":null,
+    "coordinates":null,
+    "place":null,
+    "contributors":null,
+    "retweet_count":3,
+    "favorite_count":0,
+    "entities":{
+	    "hashtags":[],
+	    "symbols":[],
+	    "urls":[{
+	    	"url":"http:\/\/t.co\/Y55M9ZkpNj",
+	        "expanded_url":"http:\/\/bit.ly\/1v6KeEu","display_url":"bit.ly\/1v6KeEu",
+	        "indices":[48,70]
+	        }],
+	        "user_mentions":[]
+    },
+    "favorited":false,
+    "retweeted":false,
+    "possibly_sensitive":false,
+    "lang":"fr"
+},
+...
