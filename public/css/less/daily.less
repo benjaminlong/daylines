@@ -160,7 +160,7 @@
 			color: @gray;
 			padding: 0px;
 			.icon{
-				vertical-align: middle;
+				vertical-align: sub;
 			}
 		}
 		.channel{
@@ -364,8 +364,33 @@
 }	
 
 .titre{
-	text-align: center;	
-	h1,h2{
+	text-align: center;
+	.dropdown-toggle{
+		cursor: pointer;
+		margin: auto;
+		max-width: 400px;
+	}
+	.dropdown-menu{
+		float: none;
+		text-align: center;
+		position: static;
+		background-color: transparent;
+		list-style: none;
+		box-shadow: none;
+		li{
+			display: inline;
+			a{
+				display: inline-block;
+			}
+		}
+		li a:hover{
+			background-color: transparent;
+			h3{
+				color: @brand-primary;
+			}
+		}
+	}	
+	h1,h2,h3{
 		line-height: 1;
 		letter-spacing: 0.0em;	
 	}
@@ -377,6 +402,12 @@
 		font-weight: 300;
 		font-size: 30px;
 		color:  rgba(255,255,255,0.65);
+	}
+	h3{
+		font-weight: 300;
+		font-size: 25px;
+		color:  @gray-lighter;	
+		.transition(color 0.1s ease);
 	}
 }
 
@@ -428,4 +459,3 @@
 		}
 	}
 }
-

@@ -8,10 +8,40 @@
 
 <div id="first-section">
   <div class="titre" data-0="opacity:1;display:block;" data-400="opacity:0;display:none;">
-    <h2 data-0="padding-top:15vh;" data-400="padding-top:0vh;">
-      <img src="img/channels/news.png" class="img-circle channel">
-      French news
-    </h2>       
+    
+    <div class="dropdown" data-0="padding-top:10vh;" data-400="padding-top:0vh;">
+      <div class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        <h2 data-0="padding-top:15vh;" data-400="padding-top:0vh;">
+          <img src="img/channels/news.png" class="img-circle channel">
+          French news
+          <span class="icon icon-arrow-down8"></span>          
+        </h2>    
+      </div>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <h3>
+              <img src="img/channels/sport.png" class="img-circle channel"> Sport              
+            </h3>
+         </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <h3>
+              <img src="img/channels/science.png" class="img-circle channel"> Science            
+            </h3>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="#">
+            <h3>
+              <img src="img/channels/music.png" class="img-circle channel"> Music              
+            </h3>
+          </a>
+        </li>
+      </ul>
+    </div>   
+
     <h1 data-0="padding-top:15vh;" data-400="padding-top:5vh;">
       #1 Etats-unis Bank America
     </h1>
@@ -311,6 +341,18 @@
   <script src="js/bootstrap/scrollspy.js"></script>  
   <script src="js/bootstrap/tab.js"></script>   
   <script src="js/bootstrap/transition.js"></script> 
+
+  <script type="text/javascript">
+  // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
+  $('.dropdown').on('show.bs.dropdown', function(e){
+    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+  });
+
+  // ADD SLIDEUP ANIMATION TO DROPDOWN //
+  $('.dropdown').on('hide.bs.dropdown', function(e){
+    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+  });
+  </script>
 
   <script src="js/skrollr.min.js"></script>       
   <script src="js/waypoints.min.js"></script>   
