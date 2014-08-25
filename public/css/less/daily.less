@@ -151,6 +151,9 @@
 #navbar{
 	.box-shadow(0 2px 3px rgba(0,0,0,.1));
 	height: @navbar-height;
+	.container-fluid{
+		background-color: white;
+	}
 	.dropdown{
 		font-size: 25px;
 		.dropdown-toggle{
@@ -161,6 +164,7 @@
 			}
 		}
 		.channel{
+			background-color: @gray-lighter;
 			max-height: @navbar-height - 4* @margin-logo;
 			margin: 2*@margin-logo 0px;
 		}
@@ -170,7 +174,9 @@
 	}
 	.ranking{
 		li{
+			display: inline;
 			a{
+				display: inline-block;				
 				height: @navbar-height;
 				font-size: @font-size-large;
 				padding-top: 0px;
@@ -414,10 +420,10 @@
 @media (min-width: @screen-md-min) {
 	#navbar{
 		.dropdown{
-			margin-left:50px;
+			margin-left:5px;
 		}
 		.ranking{
-			margin-right: 50px;
+			margin-right: 5px;
 		}
 	}
 }
