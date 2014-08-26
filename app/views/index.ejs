@@ -493,7 +493,13 @@ $(document).keydown(function(e) {
           else{goToTopic(goal);break;}
 
         case 40: // down
-        break;
+          offset= $('#navbar').position().top;
+          console.log(offset);
+          if (offset>0){
+            $('html, body').animate({scrollTop: $('#main').offset().top}, 350);
+            break;
+          }
+          else{break;}
 
         default: return; // exit this handler for other keys
     }
