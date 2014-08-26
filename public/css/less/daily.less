@@ -1,7 +1,7 @@
 // Variables persos
 @widthTopic :20%;
 @height-header:@navbar-height;
-@height-image-section:130px;
+@height-image-section:100px;
 @height-img-active-indicator:7px;
 @margin-logo:15px;
 
@@ -90,7 +90,23 @@
 		margin-top: 0px;
 		position: fixed;
 		width: 100%;
-	}	
+	}
+	.summary{
+		max-width: 500px;
+		margin: auto;
+		padding: 25px;
+		font-family: @font-family-serif;
+		background-color: white;
+		.box-shadow(0 2px 3px rgba(0,0,0,0.1));		
+		h1{
+			margin-top: 0px;
+			font-size: 60px;
+			color: @gray-darker;
+		}
+		p{
+			color: @gray-dark;
+		}
+	}
 }
 
 #section-images{
@@ -191,6 +207,7 @@
 
 #navbar{
 	.box-shadow(0 2px 3px rgba(0,0,0,.1));
+	border:none;
 	//height: @navbar-height;
 	.container-fluid{
 		text-align: center;
@@ -238,12 +255,12 @@
 				.word1{
 					line-height: @navbar-height;					
 					color: rgba(119, 119, 119, 0.58);
-					font-size: @font-size-large;
+					font-size: @font-size-base;
 				}
 				.word2{
 					opacity: 0;
 					color: lighten(rgba(119, 119, 119, 0.58),20%);
-					font-size: @font-size-base;
+					font-size: @font-size-small;
 				}
 				.word3{
 					opacity: 0;
@@ -266,9 +283,16 @@
 				}
 				&:hover{
 					.word1{
-						line-height: inherit;						
+						line-height: inherit !important;
+						border-bottom: 0px !important;
 					}
-				}			
+				}	
+				&.active{
+					.word1{
+						border-bottom: 4px solid @brand-primary;													
+						line-height: @navbar-height - 7px;
+					}
+				}							
 			}
 		}
 	}
@@ -324,6 +348,7 @@
 	}
 	.titre{
 		h1{
+			font-family: @font-family-serif;			
 			font-size: 40px;
 		}
 		h4{
@@ -359,6 +384,7 @@
 				margin-left: 20px;
 			}
 			p{
+				font-family: @font-family-serif;				
 				padding-top: 10px;
 				font-size: 23px;
 				font-weight: 400;
@@ -471,13 +497,9 @@
 
 .titre{
 	text-align: center;
-	h1,h3{
-		line-height: 1;
-		letter-spacing: 0.0em;	
-	}
 	h1{
-		font-weight: bold;
-		font-size: 45px;		
+		font-weight: 400;
+		font-size: 50px;		
 	}
 	h3{
 		font-weight: 300;
@@ -534,10 +556,16 @@
 
 
 .btn-daily{
-	.button-variant(white; @brand-primary; @brand-primary);
-	font-size: @font-size-base;
+	.button-variant(@brand-primary;white; @brand-primary);
+	font-size: @font-size-large;
 	font-weight: 300;
 	margin: 0px 20px;
-	border-radius: 2* @font-size-base;
+	border-radius: 0px;
+	font-family: @font-family-sans-serif;
+	.transition(all 0.2s ease);
+	&:hover{
+		background-color: @brand-primary;
+		color: white;
+	}
 }
 
