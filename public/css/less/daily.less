@@ -5,6 +5,9 @@
 @height-img-active-indicator:7px;
 @margin-logo:15px;
 
+@width-summary:500px;
+@padding-summary:25px;
+
 //Autres variables modifiées
 @navbar-height:75px;
 
@@ -84,20 +87,39 @@
 
 
 #first-section{	
+	overflow-x: hidden;	
 	height: 100vh;	
 	.titre{
 		color: white;
 		margin-top: 0px;
-		position: fixed;
+		position: relative;
 		width: 100%;
 	}
 	.summary{
-		max-width: 500px;
-		margin: auto;
-		padding: 25px;
+		display: inline-block;
+		width: @width-summary;
+		padding: @padding-summary;
 		font-family: @font-family-serif;
 		background-color: white;
 		.box-shadow(0 2px 3px rgba(0,0,0,0.1));		
+		margin: 0 auto;
+		left: 0;
+		right: 0;		
+		position: absolute;
+		.transition(all 0.4s ease);		
+		.rank{			
+			background-color: @brand-primary;
+			color: white;
+			font-size: 18px;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			padding: 2px 5px;
+			// .box-shadow(-2px -2px 4px 0px rgba(0, 0, 0, 0.1) inset);
+			.channel{
+				max-width: 20px;
+			}
+		}
 		h1{
 			margin-top: 0px;
 			font-size: 60px;
@@ -106,6 +128,30 @@
 		p{
 			color: @gray-dark;
 		}
+		&.right{
+			left: 90vw;
+			cursor: pointer;
+			right: @padding-summary - @width-summary;
+			&:hover{
+				right: @padding-summary+100 - @width-summary;
+			}
+		}
+		&.right-hidden{
+			left: 110vw;
+			right: -@width-summary;
+		}
+		&.left{
+			right: 90vw;
+			cursor: pointer;
+			left: @padding-summary - @width-summary;
+			&:hover{
+				left: @padding-summary+100 - @width-summary;
+			}
+		}	
+		&.left-hidden{
+			right: 110vw;
+			left: -@width-summary;
+		}			
 	}
 }
 
@@ -144,6 +190,7 @@
 					opacity: 0;
 					.transition(all 0.2s ease);
 					font-size: @font-size-base;
+					font-family: @font-family-serif;
 					position: absolute;
 					bottom: 0px;
 					padding-top: @height-image-section /2 - @font-size-base ;
@@ -172,7 +219,7 @@
 					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d000000', endColorstr='#00000000', GradientType=0);			
 				}				
 				&:hover{
-					.text{
+					.text{			
 						opacity: 1;
 						color: white;
 					}
@@ -187,19 +234,25 @@
 					height: 0px;
 					margin-bottom: 0px;					
 					display: block;
+					opacity: 0;
 					background-color: @brand-primary;		
-					.transition(all 0.2s ease);
+					.transition(opacity 0.2s ease);
+					bottom: @height-image-section;
+					height: @height-img-active-indicator;
+					margin-bottom: -@height-img-active-indicator;						
 				}						
 			}
 		}			
 		.topic.active a:after, .topic.inactive a:hover:after{
-			bottom: @height-img-active-indicator;
-			height: @height-img-active-indicator;
-			margin-bottom: -@height-img-active-indicator;						
+			opacity: 1;					
 		}
 		.topic.active{
 			.text,.shadow{
 				opacity: 1;
+			}
+			img{
+				-webkit-filter: grayscale(1) blur(2px) brightness(0.5) ;
+				filter: grayscale(1) blur(2px) brightness(0.5);
 			}
 		}
 	}	
@@ -216,7 +269,8 @@
 	.dropdown{
 		font-size: 25px;
 		.dropdown-toggle{
-			color: @gray;
+			//color: @gray;
+			font-weight: 300;
 			padding: 0px;
 			.icon{
 				vertical-align: sub;
@@ -431,18 +485,27 @@
 }
 
 #section-background{
-	.section-background-image{
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100%;
-		min-width: 100%;
-	}
-	.net{
-		z-index: -2;			
-	}
-	.blur{
-		z-index: -1;		
+	z-index: -1;
+	position: fixed;	
+	.background{
+		opacity: 0;
+		.transition(all 1s ease);
+		.section-background-image{
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			min-width: 100%;
+		}		
+		&.active{
+			opacity: 1;
+			.section-background-image.net{
+				z-index: -2;			
+			}
+			.section-background-image.blur{
+				z-index: -1;		
+			}			
+		}
 	}
 }		
 
@@ -557,11 +620,11 @@
 
 .btn-daily{
 	.button-variant(@brand-primary;white; @brand-primary);
-	font-size: @font-size-large;
+	font-size: @font-size-base;
 	font-weight: 300;
 	margin: 0px 20px;
 	border-radius: 0px;
-	font-family: @font-family-sans-serif;
+	// font-family: @font-family-sans-serif;
 	.transition(all 0.2s ease);
 	&:hover{
 		background-color: @brand-primary;

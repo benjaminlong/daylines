@@ -2,7 +2,7 @@
 
 <div id="header" data-0="opacity:1;display:block;" data-400="opacity:0;display:none;">
     <a class="logo" href="#">
-      <img src="img/logo-white.png">
+      <img src="img/logo/logo-white.png">
     </a>
     <div class="dropdown">
       <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
@@ -33,14 +33,49 @@
 </div>
 
 <div id="first-section">
-  <div class="titre" data-0="opacity:1;display:block;margin-top:20vh;" data-400="opacity:0;display:none;margin-top:0vh;">
-    <div class="summary">
-    <h1>#1 Etats-unis Iraq America</h1> 
-    <p>Iraq and America have pushed back the Islamic State, but it will take much more to quash the threat of it across the wider region</p>     
-    <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
-      More on this <span class="icon icon-arrow-down3"></span>
-    </button>
+  <div class="titre" data-0="opacity:1;display:block;padding-top:25vh;" data-400="opacity:0;display:none;padding-top:40vh;">    
+    
+    <div class="summary active topic-1 topic" id="1">
+      <span class="rank">#1</span>
+      <h1>Etats-unis Iraq America</h1> 
+      <p>Iraq and America have pushed back the Islamic State, but it will take much more to quash the threat of it across the wider region</p>     
+      <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
+        More on this <span class="icon icon-arrow-down3"></span>
+      </button>
     </div>
+    <div class="summary right topic-2 topic" id="2">
+      <span class="rank">#2</span>
+      <h1>Palestine Gaza Wall</h1> 
+      <p>Iraq and America have pushed back the Islamic State, but it will take much more to quash the threat of it across the wider region</p>     
+      <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
+        More on this <span class="icon icon-arrow-down3"></span>
+      </button>
+    </div>
+    <div class="summary right-hidden topic-3 topic"  id="3">
+      <span class="rank">#3</span>
+      <h1>Ukraine Gas Russia</h1> 
+      <p>Iraq and America have pushed back the Islamic State, but it will take much more to quash the threat of it across the wider region</p>     
+      <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
+        More on this <span class="icon icon-arrow-down3"></span>
+      </button>
+    </div>
+    <div class="summary right-hidden topic-4 topic"  id="4">
+      <span class="rank">#4</span>
+      <h1>Hollande Valls Gouvernement</h1> 
+      <p>Iraq and America have pushed back the Islamic State, but it will take much more to quash the threat of it across the wider region</p>     
+      <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
+        More on this <span class="icon icon-arrow-down3"></span>
+      </button>
+    </div>
+    <div class="summary right-hidden topic-5 topic"  id="5">
+      <span class="rank">#5</span>
+      <h1>Libération Paris 1944</h1> 
+      <p>Iraq and America have pushed back the Islamic State, but it will take much more to quash the threat of it across the wider region</p>     
+      <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
+        More on this <span class="icon icon-arrow-down3"></span>
+      </button>
+    </div>                
+
   </div> 
 </div>
 
@@ -48,351 +83,427 @@
 
   <div class="images">
 
-    <div class="topic active">
+    <div class="topic active topic-1">
       <a href="#">
         <div class="text">#1 Etats-unis Iraq America</div>
         <div class="shadow"></div>          
-        <img src="img/iraq.jpg">
+        <img src="img/cover/img1.jpg">
       </a>
     </div>
-    <div class="topic inactive">
+    <div class="topic topic-2">
       <a href="#">
         <div class="text">#2 Palestine Gaza Wall</div>
         <div class="shadow"></div>
-        <img src="img/israel.jpg">
+        <img src="img/cover/img2.jpg">
       </a>
     </div>
-    <div class="topic inactive">
+    <div class="topic topic-3">
       <a href="#">
         <div class="text">#3 Ukraine Gas Russia</div>
         <div class="shadow"></div>          
-        <img src="img/ukraine.jpg">
+        <img src="img/cover/img3.jpg">
       </a>
     </div>  
-    <div class="topic inactive">
+    <div class="topic topic-4">
       <a href="#">
         <div class="text">#4 Hollande Valls Gouvernement</div>
         <div class="shadow"></div>          
-        <img src="img/hollande.jpg">
+        <img src="img/cover/img4.jpg">
       </a>
     </div>
-    <div class="topic inactive">
+    <div class="topic topic-5">
       <a href="#">
         <div class="text">#5 Libération Paris 1944</div>
         <div class="shadow"></div>          
-        <img src="img/paris.jpg">
+        <img src="img/cover/img5.jpg">
       </a>
     </div>                        
   </div>         
 </div>  
 
+<div id="main" class="card-style">
 
-
-
-  <div id="main" class="card-style">
-
-    <div id="navbar" class="navbar navbar-default navbar-inverse" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>           
-          </button>
-          <a class="logo" href="#">
-            <img src="img/logo.png">
-          </a>                 
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                 <img src="img/channels/news.png" class="img-circle channel">
-                  French news                        
-                 <span class="icon icon-arrow-down8"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#"><img src="img/channels/sport.png" class="img-circle channel"> Sport</a></li>
-                <li><a href="#"><img src="img/channels/science.png" class="img-circle channel"> Science</a></li>
-                <li><a href="#"><img src="img/channels/music.png" class="img-circle channel"> Music</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav topics">
-            <li>
-              <a href="#" class="active">
-                <span class="word word1">#1 Etats-unis</span>
-                <span class="word word2">Iraq</span>
-                <span class="word word3">America</span>
-              </a>
-            </li>  
-            <li>
-              <a href="#">
-                <span class="word word1">#2 Palestine</span>
-                <span class="word word2">Gaza</span>
-                <span class="word word3">Wall</span>
-              </a>
-            </li>              
-            <li>
-              <a href="#">
-                <span class="word word1">#3 Ukraine</span>
-                <span class="word word2">Gas</span>
-                <span class="word word3">Russia</span>
-              </a>
-            </li>  
-            <li>
-              <a href="#">
-                <span class="word word1">#4 Hollande</span>
-                <span class="word word2">Valls</span>
-                <span class="word word3">Gouvernement</span>
-              </a>
-            </li>  
-            <li>
-              <a href="#">
-                <span class="word word1">#5 Libération</span>
-                <span class="word word2">Paris</span>
-                <span class="word word3">1944</span>
-              </a>
-            </li>  
-
-          </ul>
-          <ul class="nav navbar-nav ranking hidden-sm hidden-md hidden-lg">
-            <div class="rankby">Rank by</div>                
-            <li>
-              <a href="#">
-                <span class="icon icon-star3"></span>
-                <span class="text">By favorites</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="active">
-                <span class="icon icon-retweet"></span>
-                <span class="text">By retweets</span>
-              </a>
-            </li>                  
-            <li>
-              <a href="#">
-                <span class="icon icon-clock"></span>
-                <span class="text">Chronologically</span>
-              </a>
-            </li>
-          </ul>            
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </div>
-
-    <div class="container">
-
-        <div class="col-sm-12 hidden-xs row-ranking">
-          <ul class="nav navbar-nav ranking">
-            <div class="rankby">Rank by</div>                
-            <li>
-              <a href="#">
-                <span class="icon icon-star3"></span>
-                <span class="text">By favorites</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="active">
-                <span class="icon icon-retweet"></span>
-                <span class="text">By retweets</span>
-              </a>
-            </li>                  
-            <li>
-              <a href="#">
-                <span class="icon icon-clock"></span>
-                <span class="text">Chronologically</span>
-              </a>
-            </li>
-          </ul>            
-        </div>
-
-      <div class="row titre">
-        <h1>#1 Etats-unis iraq America</h1>  
-<!--         <button class="btn btn-daily btn-md">
-          Details
+  <div id="navbar" class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>           
         </button>
-        <button class="btn btn-daily btn-md">
-          Share
-        </button>    -->     
-      </div>       
-    
-      <div class="row tweet">
-        <div class="hidden-xs col-sm-2 profile">
-          <img src="img/profiles/monde.png" >
-        </div>
-        <div class="col-xs-9 col-sm-8 text card">
-          <span class="nom">Le Monde</span><span class="handle"><a href="#">@lemondefr</a></span>
-          <p>
-            Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-          </p>
-        </div>
-        <div class="col-xs-3 col-sm-2 numbers">
-          <a href="" class="number">
-            <span class="value">234</span>                
-            <span class="icon icon-retweet"></span>
-          </a>
-          <a href=""  class="number">
-            <span class="value">45</span>
-            <span class="icon icon-star3"></span>
-          </a>      
-          <div class="number inverse">
-            <span class="value">45' ago</span>
-            <span class="icon icon-clock"></span>            
-          </div>                    
-        </div>
-      </div> 
-      <div class="row tweet">
-        <div class="hidden-xs col-sm-2 profile">
-          <img src="img/profiles/figaro.jpeg" >
-        </div>
-        <div class="col-xs-9 col-sm-8 text card">
-          <span class="nom">Le figaro</span><span class="handle"><a href="#">@lefigaro</a></span>
-          <p>
-            Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-          </p>
-        </div>
-        <div class="col-xs-3 col-sm-2 numbers">
-          <a href="" class="number">
-            <span class="value">234</span>                
-            <span class="icon icon-retweet"></span>
-          </a>
-          <a href=""  class="number">
-            <span class="value">45</span>
-            <span class="icon icon-star3"></span>
-          </a>                
-          <div class="number inverse">
-            <span class="value">15' ago</span>
-            <span class="icon icon-clock"></span>            
-          </div>           
-        </div>
-      </div> 
-      <div class="row tweet">
-        <div class="hidden-xs col-sm-2 profile">
-          <img src="img/profiles/figaro.jpeg" >
-        </div>
-        <div class="col-xs-9 col-sm-8 text card">
-          <span class="nom">Le figaro</span><span class="handle"><a href="#">@lefigaro</a></span>
-          <img src="img/activemedium2.jpg" >
-          <p>
-            Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-          </p>
-        </div>
-        <div class="col-xs-3 col-sm-2 numbers">
-          <a href="" class="number">
-            <span class="value">234</span>                
-            <span class="icon icon-retweet"></span>
-          </a>
-          <a href=""  class="number">
-            <span class="value">45</span>
-            <span class="icon icon-star3"></span>
-          </a>                
-          <div class="number inverse">
-            <span class="value">45' ago</span>
-            <span class="icon icon-clock"></span>            
-          </div>           
-        </div>
-      </div> 
-      <div class="row tweet">
-        <div class="hidden-xs col-sm-2 profile">
-          <img src="img/profiles/parisien.png" >
-        </div>
-        <div class="col-xs-9 col-sm-8 text card">
-          <span class="nom">Le parisien</span><span class="handle"><a href="#">@parisienfr</a></span>
-          <p>
-            Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-          </p>
-        </div>
-        <div class="col-xs-3 col-sm-2 numbers">
-          <a href="" class="number">
-            <span class="value">234</span>                
-            <span class="icon icon-retweet"></span>
-          </a>
-          <a href=""  class="number">
-            <span class="value">45</span>
-            <span class="icon icon-star3"></span>
-          </a>                
-          <div class="number inverse">
-            <span class="value">33' ago</span>
-            <span class="icon icon-clock"></span>            
-          </div>           
-        </div>
-      </div> 
-      <div class="row tweet">
-        <div class="hidden-xs col-sm-2 profile">
-          <img src="img/profiles/monde.png" >
-        </div>
-        <div class="col-xs-9 col-sm-8 text card">
-          <span class="nom">Le Monde</span><span class="handle"><a href="#">@lemondefr</a></span>
-          <p>
-            Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-          </p>
-        </div>
-        <div class="col-xs-3 col-sm-2 numbers">
-          <a href="" class="number">
-            <span class="value">234</span>                
-            <span class="icon icon-retweet"></span>
-          </a>
-          <a href=""  class="number">
-            <span class="value">45</span>
-            <span class="icon icon-star3"></span>
-          </a>                
-          <div class="number inverse">
-            <span class="value">45' ago</span>
-            <span class="icon icon-clock"></span>            
-          </div>           
-        </div>
-      </div>                         
+        <a class="logo" href="#">
+          <img src="img/logo/logo.png">
+        </a>                 
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               <img src="img/channels/news.png" class="img-circle channel">
+                French news                        
+               <span class="icon icon-arrow-down8"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><img src="img/channels/sport.png" class="img-circle channel"> Sport</a></li>
+              <li><a href="#"><img src="img/channels/science.png" class="img-circle channel"> Science</a></li>
+              <li><a href="#"><img src="img/channels/music.png" class="img-circle channel"> Music</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav topics">
+          <li>
+            <a href="#" class="active  topic  topic-1">
+              <span class="word word1">#1 Etats-unis</span>
+              <span class="word word2">Iraq</span>
+              <span class="word word3">America</span>
+            </a>
+          </li>  
+          <li>
+            <a href="#" class="topic  topic-2">
+              <span class="word word1">#2 Palestine</span>
+              <span class="word word2">Gaza</span>
+              <span class="word word3">Wall</span>
+            </a>
+          </li>              
+          <li>
+            <a href="#" class="topic  topic-3">
+              <span class="word word1">#3 Ukraine</span>
+              <span class="word word2">Gas</span>
+              <span class="word word3">Russia</span>
+            </a>
+          </li>  
+          <li>
+            <a href="#" class="topic  topic-4">
+              <span class="word word1">#4 Hollande</span>
+              <span class="word word2">Valls</span>
+              <span class="word word3">Gouvernement</span>
+            </a>
+          </li>  
+          <li>
+            <a href="#" class="topic  topic-5">
+              <span class="word word1">#5 Libération</span>
+              <span class="word word2">Paris</span>
+              <span class="word word3">1944</span>
+            </a>
+          </li>  
 
-
-                                          
-
-    </div>
+        </ul>
+        <ul class="nav navbar-nav ranking hidden-sm hidden-md hidden-lg">
+          <div class="rankby">Rank by</div>                
+          <li>
+            <a href="#">
+              <span class="icon icon-star3"></span>
+              <span class="text">By favorites</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="active">
+              <span class="icon icon-retweet"></span>
+              <span class="text">By retweets</span>
+            </a>
+          </li>                  
+          <li>
+            <a href="#">
+              <span class="icon icon-clock"></span>
+              <span class="text">Chronologically</span>
+            </a>
+          </li>
+        </ul>            
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
   </div>
 
-  <div id="section-background">
-    <img  src="img/iraqblur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
-    <img src="img/iraq.jpg" class="section-background-image net"> 
-  </div>  
+  <div class="container">
 
-  <script src="js/jquery-2.1.1.min.js"></script>
+      <div class="col-sm-12 hidden-xs row-ranking">
+        <ul class="nav navbar-nav ranking">
+          <div class="rankby">Rank by</div>                
+          <li>
+            <a href="#">
+              <span class="icon icon-star3"></span>
+              <span class="text">By favorites</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="active">
+              <span class="icon icon-retweet"></span>
+              <span class="text">By retweets</span>
+            </a>
+          </li>                  
+          <li>
+            <a href="#">
+              <span class="icon icon-clock"></span>
+              <span class="text">Chronologically</span>
+            </a>
+          </li>
+        </ul>            
+      </div>
 
-  <script src="js/bootstrap/dropdown.js"></script>  
-  <script src="js/bootstrap/collapse.js"></script>   
-  <script src="js/bootstrap/affix.js"></script>  
-  <script src="js/bootstrap/alert.js"></script>   
-  <script src="js/bootstrap/button.js"></script>  
-  <script src="js/bootstrap/carousel.js"></script>   
-  <script src="js/bootstrap/modal.js"></script>  
-  <script src="js/bootstrap/tooltip.js"></script>  
-  <script src="js/bootstrap/popover.js"></script>       
-  <script src="js/bootstrap/scrollspy.js"></script>  
-  <script src="js/bootstrap/tab.js"></script>   
-  <script src="js/bootstrap/transition.js"></script> 
+    <div class="row titre">
+      <h1>#1 Etats-unis iraq America</h1>  
 
-  <script type="text/javascript">
-  // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
-  $('.dropdown').on('show.bs.dropdown', function(e){
-    $(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
+    </div>       
+  
+    <div class="row tweet">
+      <div class="hidden-xs col-sm-2 profile">
+        <img src="img/profiles/monde.png" >
+      </div>
+      <div class="col-xs-9 col-sm-8 text card">
+        <span class="nom">Le Monde</span><span class="handle"><a href="#">@lemondefr</a></span>
+        <p>
+          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
+        </p>
+      </div>
+      <div class="col-xs-3 col-sm-2 numbers">
+        <a href="" class="number">
+          <span class="value">234</span>                
+          <span class="icon icon-retweet"></span>
+        </a>
+        <a href=""  class="number">
+          <span class="value">45</span>
+          <span class="icon icon-star3"></span>
+        </a>      
+        <div class="number inverse">
+          <span class="value">45' ago</span>
+          <span class="icon icon-clock"></span>            
+        </div>                    
+      </div>
+    </div> 
+    <div class="row tweet">
+      <div class="hidden-xs col-sm-2 profile">
+        <img src="img/profiles/figaro.jpeg" >
+      </div>
+      <div class="col-xs-9 col-sm-8 text card">
+        <span class="nom">Le figaro</span><span class="handle"><a href="#">@lefigaro</a></span>
+        <p>
+          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
+        </p>
+      </div>
+      <div class="col-xs-3 col-sm-2 numbers">
+        <a href="" class="number">
+          <span class="value">234</span>                
+          <span class="icon icon-retweet"></span>
+        </a>
+        <a href=""  class="number">
+          <span class="value">45</span>
+          <span class="icon icon-star3"></span>
+        </a>                
+        <div class="number inverse">
+          <span class="value">15' ago</span>
+          <span class="icon icon-clock"></span>            
+        </div>           
+      </div>
+    </div> 
+    <div class="row tweet">
+      <div class="hidden-xs col-sm-2 profile">
+        <img src="img/profiles/figaro.jpeg" >
+      </div>
+      <div class="col-xs-9 col-sm-8 text card">
+        <span class="nom">Le figaro</span><span class="handle"><a href="#">@lefigaro</a></span>
+        <img src="img/activemedium2.jpg" >
+        <p>
+          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
+        </p>
+      </div>
+      <div class="col-xs-3 col-sm-2 numbers">
+        <a href="" class="number">
+          <span class="value">234</span>                
+          <span class="icon icon-retweet"></span>
+        </a>
+        <a href=""  class="number">
+          <span class="value">45</span>
+          <span class="icon icon-star3"></span>
+        </a>                
+        <div class="number inverse">
+          <span class="value">45' ago</span>
+          <span class="icon icon-clock"></span>            
+        </div>           
+      </div>
+    </div> 
+    <div class="row tweet">
+      <div class="hidden-xs col-sm-2 profile">
+        <img src="img/profiles/parisien.png" >
+      </div>
+      <div class="col-xs-9 col-sm-8 text card">
+        <span class="nom">Le parisien</span><span class="handle"><a href="#">@parisienfr</a></span>
+        <p>
+          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
+        </p>
+      </div>
+      <div class="col-xs-3 col-sm-2 numbers">
+        <a href="" class="number">
+          <span class="value">234</span>                
+          <span class="icon icon-retweet"></span>
+        </a>
+        <a href=""  class="number">
+          <span class="value">45</span>
+          <span class="icon icon-star3"></span>
+        </a>                
+        <div class="number inverse">
+          <span class="value">33' ago</span>
+          <span class="icon icon-clock"></span>            
+        </div>           
+      </div>
+    </div> 
+    <div class="row tweet">
+      <div class="hidden-xs col-sm-2 profile">
+        <img src="img/profiles/monde.png" >
+      </div>
+      <div class="col-xs-9 col-sm-8 text card">
+        <span class="nom">Le Monde</span><span class="handle"><a href="#">@lemondefr</a></span>
+        <p>
+          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
+        </p>
+      </div>
+      <div class="col-xs-3 col-sm-2 numbers">
+        <a href="" class="number">
+          <span class="value">234</span>                
+          <span class="icon icon-retweet"></span>
+        </a>
+        <a href=""  class="number">
+          <span class="value">45</span>
+          <span class="icon icon-star3"></span>
+        </a>                
+        <div class="number inverse">
+          <span class="value">45' ago</span>
+          <span class="icon icon-clock"></span>            
+        </div>           
+      </div>
+    </div>                         
+
+
+                                        
+
+  </div>
+</div>
+
+<div id="section-background">
+  <div class="background topic topic-1 active">
+    <img  src="img/cover/img1blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
+    <img src="img/cover/img1.jpg" class="section-background-image net">     
+  </div>
+  <div class="background topic topic-2">
+    <img  src="img/cover/img2blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
+    <img src="img/cover/img2.jpg" class="section-background-image net">     
+  </div>
+  <div class="background topic topic-3">
+    <img  src="img/cover/img3blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
+    <img src="img/cover/img3.jpg" class="section-background-image net">     
+  </div>
+  <div class="background topic topic-4">
+    <img  src="img/cover/img4blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
+    <img src="img/cover/img4.jpg" class="section-background-image net">     
+  </div>
+  <div class="background topic topic-5">
+    <img  src="img/cover/img5blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
+    <img src="img/cover/img5.jpg" class="section-background-image net">     
+  </div>        
+</div>  
+
+<script src="js/jquery-2.1.1.min.js"></script>
+
+<script src="js/bootstrap/dropdown.js"></script>  
+<script src="js/bootstrap/collapse.js"></script>   
+<script src="js/bootstrap/affix.js"></script>  
+<script src="js/bootstrap/alert.js"></script>   
+<script src="js/bootstrap/button.js"></script>  
+<script src="js/bootstrap/carousel.js"></script>   
+<script src="js/bootstrap/modal.js"></script>  
+<script src="js/bootstrap/tooltip.js"></script>  
+<script src="js/bootstrap/popover.js"></script>       
+<script src="js/bootstrap/scrollspy.js"></script>  
+<script src="js/bootstrap/tab.js"></script>   
+<script src="js/bootstrap/transition.js"></script> 
+
+<script type="text/javascript">
+// ADD SLIDEDOWN ANIMATION TO DROPDOWN //
+$('.dropdown').on('show.bs.dropdown', function(e){
+  $(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
+});
+
+// ADD SLIDEUP ANIMATION TO DROPDOWN //
+$('.dropdown').on('hide.bs.dropdown', function(e){
+  $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
+});
+</script>
+
+<script src="js/skrollr.min.js"></script>       
+<script src="js/waypoints.min.js"></script>   
+<script src="js/waypoints-sticky.min.js"></script>   
+
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>
+<script type="text/javascript">
+  $('#section-images').waypoint('sticky', {offset: 0,wrapper: '<div class="wrapper-images" />'}); 
+  $('#navbar').waypoint('sticky', {offset: 0,wrapper: '<div class="wrapper-navbar" />'});          
+</script>
+
+<script type="text/javascript">
+
+  function goToTopic(goal){
+    var current = $('.summary.active').attr('id');
+      //On va slider vers la droite, et on commence par se placer sur le summary actif
+      
+      //On met à gauche tous les élements précedents : left-hidden
+      $('.topic-'+goal+'.summary').prevAll('.summary').removeClass('left left-hidden active right right-hidden').addClass('left-hidden');
+      //Le premier élément à gauche est mis en  left
+      $('.topic-'+goal+'.summary').prev('.summary').removeClass('left left-hidden active right right-hidden').addClass('left');
+
+      //On centre le summary
+      $('.topic-'+goal+'.summary').removeClass('left left-hidden active right right-hidden').addClass('active');
+
+      //On met à droite tous les élements suivant : right-hidden
+      $('.topic-'+goal+'.summary').nextAll('.summary').removeClass('left left-hidden active right right-hidden').addClass('right-hidden');
+      //Le premier élément à gauche est mis en  left
+      $('.topic-'+goal+'.summary').next('.summary').removeClass('left left-hidden active right right-hidden').addClass('right');
+
+      //On change tous les attributs active (#summary, #images, #navbar,  #background)
+      $('.topic').removeClass('active');
+      $('.topic-'+goal).addClass('active');      
+      
+  };
+
+  //évènements déclencheurs au clic
+  $(document.body).on('click', '.summary.right,.summary.left,#section-images.topic,#navbar.topic',function(){
+    var classes= $(this).attr('class');//on prend les classes dans lesquelles il y a .topic-x
+    var p = classes.indexOf('topic-')+'topic-'.length; //position du numéro 
+    var x = classes.substring(p,p+1);
+    goToTopic(x);
   });
 
-  // ADD SLIDEUP ANIMATION TO DROPDOWN //
-  $('.dropdown').on('hide.bs.dropdown', function(e){
-    $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
-  });
-  </script>
+$(document).keydown(function(e) {
+    switch(e.which) {
 
-  <script src="js/skrollr.min.js"></script>       
-  <script src="js/waypoints.min.js"></script>   
-  <script src="js/waypoints-sticky.min.js"></script>   
+        case 37: 
+          console.log('left');
+            var goal = $('.summary.active').attr('id')-1;
+            console.log(goal);
+            if (goal<1){break;}
+            else if (goal>5){break;}
+            else{goToTopic(goal);break;}
 
-  <script type="text/javascript">
-    var s = skrollr.init();
-  </script>
-  <script type="text/javascript">
-    $('#section-images').waypoint('sticky', {offset: 0,wrapper: '<div class="wrapper-images" />'}); 
-    $('#navbar').waypoint('sticky', {offset: 0,wrapper: '<div class="wrapper-navbar" />'});          
-  </script>
+        case 38: // up
+        break;
+
+        case 39: 
+          var goal = parseInt($('.summary.active').attr('id'))+1;
+          console.log(goal);
+
+          if (goal<1){break;}
+          else if (goal>5){break;}
+          else{goToTopic(goal);break;}
+
+        case 40: // down
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+
+</script>
 
 <% include footer %>
