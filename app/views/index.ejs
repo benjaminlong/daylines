@@ -33,7 +33,7 @@
 </div>
 
 <div id="first-section">
-  <div class="titre" data-0="opacity:1;display:block;padding-top:25vh;" data-400="opacity:0;display:none;padding-top:40vh;">    
+  <div class="titre" data-0="opacity:1;display:block;margin-top:25vh;" data-400="opacity:0;display:none;margin-top:40vh;">    
     
     <div class="summary active topic-1 topic" id="1">
       <span class="rank">#1</span>
@@ -466,7 +466,7 @@ $('.dropdown').on('hide.bs.dropdown', function(e){
   };
 
   //évènements déclencheurs au clic
-  $(document.body).on('click', '.summary.right,.summary.left,#section-images.topic,#navbar.topic',function(){
+  $(document.body).on('click', '.summary.right,.summary.left,#section-images .topic,#navbar .topic',function(){
     var classes= $(this).attr('class');//on prend les classes dans lesquelles il y a .topic-x
     var p = classes.indexOf('topic-')+'topic-'.length; //position du numéro 
     var x = classes.substring(p,p+1);
