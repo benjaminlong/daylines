@@ -1,3 +1,4 @@
+// Tweet object
 
 var Natural = require('natural'),
   steemer = Natural.PorterStemmerFr,
@@ -10,6 +11,13 @@ function Tweet(opts) {
 	if (!opts) {
 		opts = {};
 	}
+
+	this.id;
+	this.text;
+	this.createdAt;
+	this.retweetCount;
+	this.favoriteCount;
+	this.stemmedWords;
 
 	// this.init(opts);
 }
@@ -92,7 +100,7 @@ Tweet.prototype.computeSteemedWords = function() {
 	this.stemmedWords = {};
 	for (var i = 0; i < words.length; i++)
 	{
-		if (words[i].length < 3) {
+		if (words[i].length <= 3) {
 			continue;
 		}
 
