@@ -14,7 +14,8 @@
     "compression": "~1.0.8",
     "method-override": "~2.1.1",
     "ejs": "~1.0.0",
-    "twitter-js-client": "*"
+    "twitter-js-client": "*",
+    "natural": "~0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
