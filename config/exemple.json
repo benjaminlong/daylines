@@ -1,39 +1,36 @@
-Data 
-[
-  [
-     {
-     "created_at":"Fri Aug 22 21:48:43 +0000 2014",
-     "id":502935421009924096,
-     "id_str":"502935421009924096",
-     "text":"Un policier jug\u00e9 pour cannibalisme en Allemagne http:\/\/t.co\/Y55M9ZkpNj",
-     "source":"\u003ca href=\"http:\/\/twitterfeed.com\" rel=\"nofollow\"\u003etwitterfeed\u003c\/a\u003e",
-     "truncated":false,
-     "in_reply_to_status_id":null,
-     "in_reply_to_status_id_str":null,
-     "in_reply_to_user_id":null,
-     "in_reply_to_user_id_str":null,
-     "in_reply_to_screen_name":null,
-     "user":{
-     	"id":8350912,
-	    "id_str":"8350912",
-	    "name":"Le Figaro",
-	    "screen_name":"Le_Figaro",
-	    "location":"France",
-	    "description":"Actualit\u00e9s, \u00e9conomie, politique, culture et divertissements.Le Figaro, premier quotidien g\u00e9n\u00e9raliste et premier site d'information g\u00e9n\u00e9raliste en France.",
-	    "url":"http:\/\/t.co\/ZfLEgIKdrw",
-	    "entities": {
-	    	"url":{
-	    		"urls":[{
-	    			"url":"http:\/\/t.co\/ZfLEgIKdrw",
-	    			"expanded_url":"http:\/\/www.lefigaro.fr",
-	    			"display_url":"lefigaro.fr",
-	    			"indices":[0,22]
-	   			}]
-	     	},
-	   		"description":{
-	     		"urls":[]
-	     	}
-	    },
+{
+    "created_at":"Fri Aug 22 21:48:43 +0000 2014",
+    "id":502935421009924096,
+    "id_str":"502935421009924096",
+    "text":"Un policier jug\u00e9 pour cannibalisme en Allemagne http:\/\/t.co\/Y55M9ZkpNj",
+    "source":"\u003ca href=\"http:\/\/twitterfeed.com\" rel=\"nofollow\"\u003etwitterfeed\u003c\/a\u003e",
+    "truncated":false,
+    "in_reply_to_status_id":null,
+    "in_reply_to_status_id_str":null,
+    "in_reply_to_user_id":null,
+    "in_reply_to_user_id_str":null,
+    "in_reply_to_screen_name":null,
+    "user":{
+        "id":8350912,
+        "id_str":"8350912",
+        "name":"Le Figaro",
+        "screen_name":"Le_Figaro",
+        "location":"France",
+        "description":"Actualit\u00e9s, \u00e9conomie, politique, culture et divertissements.Le Figaro, premier quotidien g\u00e9n\u00e9raliste et premier site d'information g\u00e9n\u00e9raliste en France.",
+        "url":"http:\/\/t.co\/ZfLEgIKdrw",
+        "entities": {
+           "url":{
+               "urls":[{
+                    "url":"http:\/\/t.co\/ZfLEgIKdrw",
+                    "expanded_url":"http:\/\/www.lefigaro.fr",
+                    "display_url":"lefigaro.fr",
+                    "indices":[0,22]
+                }]
+            },
+            "description":{
+                "urls":[]
+            }
+        },
      	"protected":false,
      	"followers_count":768001,
      	"friends_count":385,
@@ -72,18 +69,18 @@ Data
     "retweet_count":3,
     "favorite_count":0,
     "entities":{
-	    "hashtags":[],
-	    "symbols":[],
-	    "urls":[{
-	    	"url":"http:\/\/t.co\/Y55M9ZkpNj",
-	        "expanded_url":"http:\/\/bit.ly\/1v6KeEu","display_url":"bit.ly\/1v6KeEu",
-	        "indices":[48,70]
-	        }],
-	        "user_mentions":[]
+        "hashtags":[],
+        "symbols":[],
+        "urls":[{
+           "url":"http:\/\/t.co\/Y55M9ZkpNj",
+            "expanded_url":"http:\/\/bit.ly\/1v6KeEu",
+            "display_url":"bit.ly\/1v6KeEu",
+            "indices":[48,70]
+        }],
+        "user_mentions":[]
     },
     "favorited":false,
     "retweeted":false,
     "possibly_sensitive":false,
     "lang":"fr"
-},
-...
+}
