@@ -4,7 +4,11 @@ var Natural = require('natural'),
   steemer = Natural.PorterStemmerFr,
 	metaphone = Natural.Metaphone;
 
+var fs = require("fs");
+
 metaphone.attach();
+
+var uselessWords = JSON.parse(fs.readFileSync('./config/uselessWords_fr.json', encoding="ascii"));
 
 // ----------------------------------------------------------------------------
 function Tweet(opts) {
@@ -94,17 +98,22 @@ Tweet.prototype.computeSteemedWords = function() {
 	if (!this.text) {
 		return;
 	}
+
 	var text = linkify(this.text);
 	var words = steemer.tokenizeAndStem(text);
 
 	this.stemmedWords = {};
 	for (var i = 0; i < words.length; i++)
 	{
-		if (words[i].length <= 3) {
+		if (words[i].length <= 3 || uselessWords.hasOwnProperty(words[i])) {
 			continue;
 		}
 
-		var stemmedWord = words[i].phonetics();
+		// var stemmedWord = words[i].phonetics();
+		var stemmedWord = words[i];
+
+		console.log (words[i] + " --> " + stemmedWord);
+
 		if (stemmedWord in this.stemmedWords)
 		{
 		this.stemmedWords[stemmedWord] ++;
