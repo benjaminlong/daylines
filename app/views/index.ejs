@@ -484,7 +484,9 @@ $(document).keydown(function(e) {
             else{goToTopic(goal);break;}
 
         case 38: // up
-        break;
+          offset= $('#navbar').position().top;
+            $('html, body').animate({scrollTop: $('#first-section').offset().top}, 350);
+            break;
 
         case 39: 
           var goal = parseInt($('.summary.active').attr('id'))+1;
