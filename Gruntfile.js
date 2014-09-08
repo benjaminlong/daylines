@@ -17,6 +17,49 @@ module.exports = function (grunt) {
         file: 'app.js'
       }
     },
+
+    jshint: {
+      files: [
+        '**/*.js',
+        'Gruntfile.js',
+        '!node_modules/**/*'
+      ],
+      options: {
+        jshintrc: '.jshintrc'
+      }
+    },
+
+    // run the mocha test via Node.js
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec', //nyan
+          // Require blanket wrapper here to instrument other required
+          // files on the fly.
+          //
+          // NB. We cannot require blanket directly as it
+          // detects that we are not running mocha cli and loads differently.
+          //
+          // NNB. As mocha is 'clever' enough to only run the test once for
+          // each file the following coverage task does not actually run any
+          // test which is why the coverage instrumentation has to be done here
+          //require: 'coverage/blanket'
+        },
+        src: ['app/models/test/**/*.js']
+      },
+      coverage: {
+        options: {
+          reporter: 'html-cov',
+          // use the quiet flag to suppress the mocha console output
+          quiet: true,
+          // specify a destination file to capture the mocha
+          // output (the quiet option does not suppress this)
+          captureFile: 'coverage.html'
+        },
+        src: ['test/**/*.js']
+      }
+    },
+
     watch: {
       options: {
         nospawn: true,
@@ -58,5 +101,14 @@ module.exports = function (grunt) {
     }, 500);
   });
 
-  grunt.registerTask('default', ['develop', 'watch']);
+  // Load the plugin that provides the "clean" task.
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  // Load the plugin that provides the "jshint" task.
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  // Load mocha test
+  grunt.loadNpmTasks('grunt-mocha-test');
+
+  grunt.registerTask('default', ['develop', 'jshint', 'mochaTest', 'watch']);
 };
