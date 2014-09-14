@@ -36,7 +36,6 @@
   <div class="titre" data-0="opacity:1;display:block;margin-top:25vh;" data-400="opacity:0;display:none;margin-top:40vh;">    
     
 <% for(var i=1; i<6; i++) {%>
-
     <div class="summary topic-<%= i %> topic 
     <% if(i == 1) { %>
       active
@@ -55,7 +54,6 @@
         More on this <span class="icon icon-arrow-down3"></span>
       </button>
     </div>
-
 <% } %>    
 
   </div> 
@@ -64,42 +62,15 @@
 <div id="section-images" class=""> 
 
   <div class="images">
-
-    <div class="topic active topic-1">
+    <% for(var i=1; i<6; i++) {%>
+    <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">
       <a href="#">
-        <div class="text">#1 Etats-unis Iraq America</div>
+        <div class="text"><%= topics[i].keyWords %></div>
         <div class="shadow"></div>          
-        <img src="img/cover/img1.jpg">
+        <img src="img/cover/img<%= i %>.jpg">
       </a>
     </div>
-    <div class="topic topic-2">
-      <a href="#">
-        <div class="text">#2 Palestine Gaza Wall</div>
-        <div class="shadow"></div>
-        <img src="img/cover/img2.jpg">
-      </a>
-    </div>
-    <div class="topic topic-3">
-      <a href="#">
-        <div class="text">#3 Ukraine Gas Russia</div>
-        <div class="shadow"></div>          
-        <img src="img/cover/img3.jpg">
-      </a>
-    </div>  
-    <div class="topic topic-4">
-      <a href="#">
-        <div class="text">#4 Hollande Valls Gouvernement</div>
-        <div class="shadow"></div>          
-        <img src="img/cover/img4.jpg">
-      </a>
-    </div>
-    <div class="topic topic-5">
-      <a href="#">
-        <div class="text">#5 Libération Paris 1944</div>
-        <div class="shadow"></div>          
-        <img src="img/cover/img5.jpg">
-      </a>
-    </div>                        
+    <% } %>                        
   </div>         
 </div>  
 
