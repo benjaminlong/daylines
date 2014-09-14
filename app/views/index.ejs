@@ -207,26 +207,12 @@
 </div>
 
 <div id="section-background">
-  <div class="background topic topic-1 active">
-    <img  src="img/cover/img1blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
-    <img src="img/cover/img1.jpg" class="section-background-image net">     
-  </div>
-  <div class="background topic topic-2">
-    <img  src="img/cover/img2blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
-    <img src="img/cover/img2.jpg" class="section-background-image net">     
-  </div>
-  <div class="background topic topic-3">
-    <img  src="img/cover/img3blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
-    <img src="img/cover/img3.jpg" class="section-background-image net">     
-  </div>
-  <div class="background topic topic-4">
-    <img  src="img/cover/img4blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
-    <img src="img/cover/img4.jpg" class="section-background-image net">     
-  </div>
-  <div class="background topic topic-5">
-    <img  src="img/cover/img5blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
-    <img src="img/cover/img5.jpg" class="section-background-image net">     
-  </div>        
+  <% for(var i=1; i<6; i++) {%>
+  <div class="background topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">
+    <img  src="img/cover/img<%= i %> blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
+    <img src="img/cover/img<%= i %> .jpg" class="section-background-image net">     
+  </div>           
+  <% } %>           
 </div>  
 
 <script src="js/jquery-2.1.1.min.js"></script>
