@@ -60,7 +60,6 @@
 </div>
 
 <div id="section-images" class=""> 
-
   <div class="images">
     <% for(var i=1; i<6; i++) {%>
     <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">
@@ -105,42 +104,15 @@
           </li>
         </ul>
         <ul class="nav navbar-nav topics">
+          <% for(var i=1; i<6; i++) {%>
           <li>
-            <a href="#" class="active  topic  topic-1">
-              <span class="word word1">#1 Etats-unis</span>
-              <span class="word word2">Iraq</span>
-              <span class="word word3">America</span>
+            <a href="#" class="topic  topic-<%= i %> <% if(i == 1) { %>active<% }%>">
+              <span class="word word1"><%= topics[i].keyWords %></span>
+              <span class="word word2"></span>
+              <span class="word word3"></span>
             </a>
-          </li>  
-          <li>
-            <a href="#" class="topic  topic-2">
-              <span class="word word1">#2 Palestine</span>
-              <span class="word word2">Gaza</span>
-              <span class="word word3">Wall</span>
-            </a>
-          </li>              
-          <li>
-            <a href="#" class="topic  topic-3">
-              <span class="word word1">#3 Ukraine</span>
-              <span class="word word2">Gas</span>
-              <span class="word word3">Russia</span>
-            </a>
-          </li>  
-          <li>
-            <a href="#" class="topic  topic-4">
-              <span class="word word1">#4 Hollande</span>
-              <span class="word word2">Valls</span>
-              <span class="word word3">Gouvernement</span>
-            </a>
-          </li>  
-          <li>
-            <a href="#" class="topic  topic-5">
-              <span class="word word1">#5 Libération</span>
-              <span class="word word2">Paris</span>
-              <span class="word word3">1944</span>
-            </a>
-          </li>  
-
+          </li>            
+          <% } %>          
         </ul>
         <ul class="nav navbar-nav ranking hidden-sm hidden-md hidden-lg">
           <div class="rankby">Rank by</div>                
