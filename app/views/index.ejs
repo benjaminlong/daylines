@@ -165,140 +165,43 @@
         </ul>            
       </div>
 
-    <div class="row titre">
-      <h1>#1 Etats-unis iraq America</h1>  
+    <% for(var i=1; i<6; i++) {%>
+    <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">    
+      
+      <div class="row titre">
+        <h1><%= topics[i].keyWords %></h1>  
+      </div>      
 
-    </div>       
-  
-    <div class="row tweet">
-      <div class="hidden-xs col-sm-2 profile">
-        <img src="img/profiles/monde.png" >
-      </div>
-      <div class="col-xs-9 col-sm-8 text card">
-        <span class="nom">Le Monde</span><span class="handle"><a href="#">@lemondefr</a></span>
-        <p>
-          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-        </p>
-      </div>
-      <div class="col-xs-3 col-sm-2 numbers">
-        <a href="" class="number">
-          <span class="value">234</span>                
-          <span class="icon icon-retweet"></span>
-        </a>
-        <a href=""  class="number">
-          <span class="value">45</span>
-          <span class="icon icon-star3"></span>
-        </a>      
-        <div class="number inverse">
-          <span class="value">45' ago</span>
-          <span class="icon icon-clock"></span>            
-        </div>                    
-      </div>
-    </div> 
-    <div class="row tweet">
-      <div class="hidden-xs col-sm-2 profile">
-        <img src="img/profiles/figaro.jpeg" >
-      </div>
-      <div class="col-xs-9 col-sm-8 text card">
-        <span class="nom">Le figaro</span><span class="handle"><a href="#">@lefigaro</a></span>
-        <p>
-          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-        </p>
-      </div>
-      <div class="col-xs-3 col-sm-2 numbers">
-        <a href="" class="number">
-          <span class="value">234</span>                
-          <span class="icon icon-retweet"></span>
-        </a>
-        <a href=""  class="number">
-          <span class="value">45</span>
-          <span class="icon icon-star3"></span>
-        </a>                
-        <div class="number inverse">
-          <span class="value">15' ago</span>
-          <span class="icon icon-clock"></span>            
-        </div>           
-      </div>
-    </div> 
-    <div class="row tweet">
-      <div class="hidden-xs col-sm-2 profile">
-        <img src="img/profiles/figaro.jpeg" >
-      </div>
-      <div class="col-xs-9 col-sm-8 text card">
-        <span class="nom">Le figaro</span><span class="handle"><a href="#">@lefigaro</a></span>
-        <img src="img/activemedium2.jpg" >
-        <p>
-          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-        </p>
-      </div>
-      <div class="col-xs-3 col-sm-2 numbers">
-        <a href="" class="number">
-          <span class="value">234</span>                
-          <span class="icon icon-retweet"></span>
-        </a>
-        <a href=""  class="number">
-          <span class="value">45</span>
-          <span class="icon icon-star3"></span>
-        </a>                
-        <div class="number inverse">
-          <span class="value">45' ago</span>
-          <span class="icon icon-clock"></span>            
-        </div>           
-      </div>
-    </div> 
-    <div class="row tweet">
-      <div class="hidden-xs col-sm-2 profile">
-        <img src="img/profiles/parisien.png" >
-      </div>
-      <div class="col-xs-9 col-sm-8 text card">
-        <span class="nom">Le parisien</span><span class="handle"><a href="#">@parisienfr</a></span>
-        <p>
-          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-        </p>
-      </div>
-      <div class="col-xs-3 col-sm-2 numbers">
-        <a href="" class="number">
-          <span class="value">234</span>                
-          <span class="icon icon-retweet"></span>
-        </a>
-        <a href=""  class="number">
-          <span class="value">45</span>
-          <span class="icon icon-star3"></span>
-        </a>                
-        <div class="number inverse">
-          <span class="value">33' ago</span>
-          <span class="icon icon-clock"></span>            
-        </div>           
-      </div>
-    </div> 
-    <div class="row tweet">
-      <div class="hidden-xs col-sm-2 profile">
-        <img src="img/profiles/monde.png" >
-      </div>
-      <div class="col-xs-9 col-sm-8 text card">
-        <span class="nom">Le Monde</span><span class="handle"><a href="#">@lemondefr</a></span>
-        <p>
-          Angers : à 89 ans, il vole les passagers d'un TGV <a href="#">http://dlvr.it/6gFfVB </a>
-        </p>
-      </div>
-      <div class="col-xs-3 col-sm-2 numbers">
-        <a href="" class="number">
-          <span class="value">234</span>                
-          <span class="icon icon-retweet"></span>
-        </a>
-        <a href=""  class="number">
-          <span class="value">45</span>
-          <span class="icon icon-star3"></span>
-        </a>                
-        <div class="number inverse">
-          <span class="value">45' ago</span>
-          <span class="icon icon-clock"></span>            
-        </div>           
-      </div>
-    </div>                         
+      <% for(var j=1; j<11; j++) {%>     
+      <div class="row tweet">
+        <div class="hidden-xs col-sm-2 profile">
+          <img src="img/profiles/monde.png" >
+        </div>
+        <div class="col-xs-9 col-sm-8 text card">
+          <span class="nom">Le Monde</span><span class="handle"><a href="#">@lemondefr</a></span>
+          <p>
+            <%= topics[i].tweets[j].text %>            
+          </p>
+        </div>
+        <div class="col-xs-3 col-sm-2 numbers">
+          <a href="" class="number">
+            <span class="value"><%= topics[i].tweets[j].retweetCount %></span>                
+            <span class="icon icon-retweet"></span>
+          </a>
+          <a href=""  class="number">
+            <span class="value"><%= topics[i].tweets[j].favoriteCount %></span>
+            <span class="icon icon-star3"></span>
+          </a>      
+          <div class="number inverse">
+            <span class="value"><%= topics[i].tweets[j].createdAt %></span>
+            <span class="icon icon-clock"></span>            
+          </div>                    
+        </div>
+      </div>    
+      <% } %>
 
-
-                                        
+    </div>        
+    <% } %>                                            
 
   </div>
 </div>
