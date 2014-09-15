@@ -175,10 +175,12 @@
       <% for(var j=1; j<11; j++) {%>     
       <div class="row tweet">
         <div class="hidden-xs col-sm-2 profile">
-          <img src="img/profiles/monde.png" >
+          <a href="http://twitter.com/<%= topics[i].tweets[j].userScreenName %>">
+            <img src="<%= topics[i].tweets[j].userImageUrl %>" alt="image profile <%= topics[i].tweets[j].userName %>" >
+          </a>
         </div>
         <div class="col-xs-9 col-sm-8 text card">
-          <span class="nom">Le Monde</span><span class="handle"><a href="#">@lemondefr</a></span>
+          <span class="nom"><%= topics[i].tweets[j].userName %>  </span><span class="handle"><a href="http://twitter.com/<%= topics[i].tweets[j].userScreenName %>">@<%= topics[i].tweets[j].userScreenName %></a></span>
           <p>
             <%= topics[i].tweets[j].text %>            
           </p>

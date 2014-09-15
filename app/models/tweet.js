@@ -17,18 +17,25 @@ function Tweet(opts) {
 	}
 
 	this.id;
+
+	this.userName;
+	this.userScreenName;
+	this.userImageUrl;
 	this.text;
 	this.createdAt;
 	this.retweetCount;
 	this.favoriteCount;
 	this.stemmedWords;
-
 	// this.init(opts);
 }
 
 // ----------------------------------------------------------------------------
 Tweet.prototype.init = function(opts) {
 	this.id = opts.id;
+
+	this.userName = opts.user.name;
+	this.userScreenName = opts.user.screen_name;	
+	this.userImageUrl = opts.user.profile_image_url;
 	this.text = opts.text;
 	this.createdAt = opts.created_at;
 	this.retweetCount = opts.retweet_count;
@@ -47,6 +54,41 @@ Tweet.prototype.setId = function(id) {
 Tweet.prototype.getId = function () {
 	return this.id;
 }
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.setUserName = function (text) {
+	this.userName = text
+	return this;
+}
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.getUserName = function () {
+	return this.userName;
+}
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.setUserScreenName = function (text) {
+	this.userScreenName = text
+	return this;
+}
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.getUserScreenName = function () {
+	return this.userScreenName;
+}
+
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.setUserImageUrl= function (text) {
+	this.userImageUrl= text
+	return this;
+}
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.getUserImageUrl= function () {
+	return this.userImageUrl;
+}
+
 
 // ----------------------------------------------------------------------------
 Tweet.prototype.setText = function (text) {
