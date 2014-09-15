@@ -98,6 +98,7 @@ Tweet.prototype.setText = function (text) {
 
 // ----------------------------------------------------------------------------
 Tweet.prototype.getText = function () {
+	var text = addlinks(this.text);
 	return this.text;
 }
 
@@ -181,8 +182,8 @@ Tweet.prototype.setStemmedWords = function(stemmedWords) {
 
 function linkify(text) {
 	var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-	return text.replace(urlRegex, '');
+	return text.replace(urlRegex, '' );
 }
 
-
 module.exports = Tweet;
+

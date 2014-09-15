@@ -175,13 +175,13 @@
       <% for(var j=1; j<11; j++) {%>     
       <div class="row tweet">
         <div class="hidden-xs col-sm-2 profile">
-          <a href="http://twitter.com/<%= topics[i].tweets[j].userScreenName %>">
+          <a href="http://twitter.com/<%= topics[i].tweets[j].userScreenName %>" taget="blank">
             <img src="<%= topics[i].tweets[j].userImageUrl %>" alt="image profile <%= topics[i].tweets[j].userName %>" >
           </a>
         </div>
         <div class="col-xs-9 col-sm-8 text card">
           <span class="nom"><%= topics[i].tweets[j].userName %>  </span><span class="handle"><a href="http://twitter.com/<%= topics[i].tweets[j].userScreenName %>">@<%= topics[i].tweets[j].userScreenName %></a></span>
-          <p>
+          <p class="content">
             <%= topics[i].tweets[j].text %>            
           </p>
         </div>
@@ -324,6 +324,32 @@ $(document).keydown(function(e) {
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 
+
+</script>
+
+<script type="text/javascript">
+function addlinks(data) {
+    //Add link to all http:// links within tweets
+     data = data.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+        return '<a href="'+url+'"  target="_blank">'+url+'</a>';
+    });
+         
+    //Add link to @usernames used within tweets
+    data = data.replace(/\B@([_a-z0-9]+)/ig, function(reply) {
+        return '<a href="http://twitter.com/'+reply.substring(1)+'" style="font-weight:lighter;" target="_blank">'+reply.charAt(0)+reply.substring(1)+'</a>';
+    });
+//Add link to #hastags used within tweets
+    data = data.replace(/\B#([_a-z0-9]+)/ig, function(reply) {
+        return '<a href="https://twitter.com/search?q='+reply.substring(1)+'" style="font-weight:lighter;" target="_blank">'+reply.charAt(0)+reply.substring(1)+'</a>';
+    });
+    return data;
+}
+
+$(document).ready(function(){
+  $( ".tweet .content" ).each(function() {
+    $(this).html(addlinks($(this).html()));
+  });  
+});
 
 </script>
 
