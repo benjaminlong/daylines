@@ -48,7 +48,7 @@
     <% } %>"
     id="<%= i %>">
       <span class="rank"><%= i %></span>
-      <h1><%= topics[i].keyWords %></h1> 
+      <h1><%= topics[i].keyWords[0] %> <%= topics[i].keyWords[1] %> <%= topics[i].keyWords[2] %></h1> 
       <p>Description détaillée, premier synopsis de l'article du monde (par exemple)</p>     
       <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
         More on this <span class="icon icon-arrow-down3"></span>
@@ -64,7 +64,7 @@
     <% for(var i=1; i<6; i++) {%>
     <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">
       <a href="#">
-        <div class="text"><%= topics[i].keyWords %></div>
+        <div class="text"><%= topics[i].keyWords[0] %> <%= topics[i].keyWords[1] %> <%= topics[i].keyWords[2] %></div>
         <div class="shadow"></div>          
         <img src="img/cover/img<%= i %>.jpg">
       </a>
@@ -107,9 +107,9 @@
           <% for(var i=1; i<6; i++) {%>
           <li>
             <a href="#" class="topic  topic-<%= i %> <% if(i == 1) { %>active<% }%>">
-              <span class="word word1"><%= topics[i].keyWords %></span>
-              <span class="word word2"></span>
-              <span class="word word3"></span>
+              <span class="word word1"><%= topics[i].keyWords[0] %></span>
+              <span class="word word2"><%= topics[i].keyWords[1] %></span>
+              <span class="word word3"><%= topics[i].keyWords[2] %></span>
             </a>
           </li>            
           <% } %>          
@@ -169,7 +169,7 @@
     <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">    
       
       <div class="row titre">
-        <h1><%= topics[i].keyWords %></h1>  
+        <h1><%= topics[i].keyWords[0] %> <%= topics[i].keyWords[1] %> <%= topics[i].keyWords[2] %></h1>  
       </div>      
 
       <% for(var j=1; j<11; j++) {%>     
@@ -194,7 +194,7 @@
             <span class="value"><%= topics[i].tweets[j].favoriteCount %></span>
             <span class="icon icon-star3"></span>
           </a>      
-          <div class="number inverse">
+          <div class="number inverse date">
             <span class="value"><%= topics[i].tweets[j].createdAt %></span>
             <span class="icon icon-clock"></span>            
           </div>                    
@@ -350,7 +350,47 @@ $(document).ready(function(){
     $(this).html(addlinks($(this).html()));
   });  
 });
+</script>
+<script type="text/javascript">
+function parseTwitterDate(tdate) {
+    var system_date = new Date(Date.parse(tdate));
+    var user_date = new Date();
+    if (K.ie) {
+        system_date = Date.parse(tdate.replace(/( \+)/, ' UTC$1'))
+    }
+    var diff = Math.floor((user_date - system_date) / 1000);
+    console.log(diff);
+    if (diff <= 1) {return "à l'instant";}
+    if (diff < 20) {return "il y a " + diff + " secondes";}
+    if (diff < 40) {return "il y a une minute";}
+    if (diff < 60) {return "il y a moins d'une minute";}
+    if (diff <= 90) {return "il y a une minute";}
+    if (diff <= 3540) {return "il y a " + Math.round(diff / 60) + " minutes";}
+    if (diff <= 5400) {return "il y a 1 heure";}
+    if (diff <= 86400) {return "il y a " + Math.round(diff / 3600) + " heures";}
+    if (diff <= 129600) {return "il y a 1 jour";}
+    if (diff < 604800) {return "il y a " + Math.round(diff / 86400) + " jours";}
+    if (diff <= 777600) {return "il y a 1 semaine";}
+    if (diff <= 1555200) {return "il y a 2 semaine";} 
+    if (diff <= 2332800) {return "il y a 3 semaine";}    
+    if (diff <= 3110400) {return "il y a un mois";} 
+    else {return system_date;}
+}
+
+// from http://widgets.twimg.com/j/1/widget.js
+var K = function () {
+    var a = navigator.userAgent;
+    return {
+        ie: a.match(/MSIE\s([^;]*)/)
+    }
+}();
+
+$(document).ready(function(){
+  $( ".tweet .date .value" ).each(function() {
+    var tweetDate = $(this).html();
+    $(this).html(parseTwitterDate( tweetDate ) );
+  });  
+});
 
 </script>
-
 <% include footer %>
