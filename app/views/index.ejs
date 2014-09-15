@@ -172,7 +172,7 @@
         <h1><%= topics[i].keyWords[0] %> <%= topics[i].keyWords[1] %> <%= topics[i].keyWords[2] %></h1>  
       </div>      
 
-      <% for(var j=1; j<11; j++) {%>     
+      <% for(var j=1; j<topics[i].tweets.length; j++) {%>     
       <div class="row tweet">
         <div class="hidden-xs col-sm-2 profile">
           <a href="http://twitter.com/<%= topics[i].tweets[j].userScreenName %>" taget="blank">
@@ -184,6 +184,7 @@
           <p class="content">
             <%= topics[i].tweets[j].text %>            
           </p>
+          <% if (topics[i].tweets[j].imageUrl) { %><img src="<%= topics[i].tweets[j].imageUrl %>"><% } %>
         </div>
         <div class="col-xs-3 col-sm-2 numbers">
           <a href="" class="number">
@@ -245,12 +246,12 @@ $('.dropdown').on('hide.bs.dropdown', function(e){
 </script>
 
 <script src="js/skrollr.min.js"></script>       
-<script src="js/waypoints.min.js"></script>   
-<script src="js/waypoints-sticky.min.js"></script>   
-
 <script type="text/javascript">
   var s = skrollr.init();
 </script>
+
+<script src="js/waypoints.min.js"></script>   
+<script src="js/waypoints-sticky.min.js"></script>   
 <script type="text/javascript">
   $('#section-images').waypoint('sticky', {offset: 0,wrapper: '<div class="wrapper-images" />'}); 
   $('#navbar').waypoint('sticky', {offset: 0,wrapper: '<div class="wrapper-navbar" />'});          
@@ -278,7 +279,6 @@ $('.dropdown').on('hide.bs.dropdown', function(e){
       //On change tous les attributs active (#summary, #images, #navbar,  #background)
       $('.topic').removeClass('active');
       $('.topic-'+goal).addClass('active');      
-      
   };
 
   //évènements déclencheurs au clic
@@ -342,6 +342,9 @@ function addlinks(data) {
     data = data.replace(/\B#([_a-z0-9]+)/ig, function(reply) {
         return '<a href="https://twitter.com/search?q='+reply.substring(1)+'" style="font-weight:lighter;" target="_blank">'+reply.charAt(0)+reply.substring(1)+'</a>';
     });
+    data = data.replace(/\B#([_a-z0-9]+)/ig, function(reply) {
+        return '<a href="https://twitter.com/search?q='+reply.substring(1)+'" style="font-weight:lighter;" target="_blank">'+reply.charAt(0)+reply.substring(1)+'</a>';
+    });    
     return data;
 }
 

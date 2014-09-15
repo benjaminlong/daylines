@@ -21,6 +21,7 @@ function Tweet(opts) {
 	this.userName;
 	this.userScreenName;
 	this.userImageUrl;
+	this.imageUrl;
 	this.text;
 	this.createdAt;
 	this.retweetCount;
@@ -36,6 +37,8 @@ Tweet.prototype.init = function(opts) {
 	this.userName = opts.user.name;
 	this.userScreenName = opts.user.screen_name;	
 	this.userImageUrl = opts.user.profile_image_url;
+	this.imageUrl = null;
+
 	this.text = opts.text;
 	this.createdAt = opts.created_at;
 	this.retweetCount = opts.retweet_count;
@@ -89,6 +92,16 @@ Tweet.prototype.getUserImageUrl= function () {
 	return this.userImageUrl;
 }
 
+// ----------------------------------------------------------------------------
+Tweet.prototype.setImageUrl= function (text) {
+	this.imageUrl= text
+	return this;
+}
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.getImageUrl= function () {
+	return this.imageUrl;
+}
 
 // ----------------------------------------------------------------------------
 Tweet.prototype.setText = function (text) {
