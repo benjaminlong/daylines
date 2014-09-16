@@ -10,68 +10,68 @@
           <img src="img/channels/news.png" class="img-circle channel">
             French news
           <span class="icon icon-arrow-down8"></span>           
-        </span>         
+        </span>
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
         <li role="presentation">
           <a role="menuitem" tabindex="-1" href="#">
-            <img src="img/channels/sport.png" class="img-circle channel"> Sport              
+            <img src="img/channels/sport.png" class="img-circle channel"> Sport
          </a>
         </li>
         <li role="presentation">
           <a role="menuitem" tabindex="-1" href="#">
-            <img src="img/channels/science.png" class="img-circle channel"> Science            
+            <img src="img/channels/science.png" class="img-circle channel"> Science
           </a>
         </li>
         <li role="presentation">
           <a role="menuitem" tabindex="-1" href="#">
-            <img src="img/channels/music.png" class="img-circle channel"> Music              
+            <img src="img/channels/music.png" class="img-circle channel"> Music
           </a>
         </li>
       </ul>
-    </div>             
+    </div>
 </div>
 
 <div id="first-section">
-  <div class="titre" data-0="opacity:1;display:block;margin-top:25vh;" data-400="opacity:0;display:none;margin-top:40vh;">    
-    
-<% for(var i=1; i<6; i++) {%>
-    <div class="summary topic-<%= i %> topic 
+  <div class="titre" data-0="opacity:1;display:block;margin-top:25vh;" data-400="opacity:0;display:none;margin-top:40vh;">
+
+<% for(var i=1; i < maxTopics; i++) {%>
+    <div class="summary topic-<%= i %> topic
     <% if(i == 1) { %>
       active
     <% } else { %>
       <% if(i == 2) { %>
         right
       <% } else { %>
-        right-hidden        
-      <% } %>      
+        right-hidden
+     <% } %>
     <% } %>"
     id="<%= i %>">
       <span class="rank"><%= i %></span>
-      <h1><%= topics[i].keyWords[0] %> <%= topics[i].keyWords[1] %> <%= topics[i].keyWords[2] %></h1> 
-      <p>Description détaillée, premier synopsis de l'article du monde (par exemple)</p>     
+      <h1><%= topics[i].getTitle() %></h1>
+      <p>Description détaillée, premier synopsis de l'article du monde (par exemple)</p>
       <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
         More on this <span class="icon icon-arrow-down3"></span>
       </button>
     </div>
-<% } %>    
+<% } %>
 
-  </div> 
+  </div>
 </div>
 
 <div id="section-images" class=""> 
   <div class="images">
-    <% for(var i=1; i<6; i++) {%>
+    <% for(var i=1; i < maxTopics; i++) { %>
     <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">
       <a href="#">
-        <div class="text"><%= topics[i].keyWords[0] %> <%= topics[i].keyWords[1] %> <%= topics[i].keyWords[2] %></div>
-        <div class="shadow"></div>          
+        <div class="text"><%= topics[i].getTitle() %></div>
+        <div class="shadow"></div>
         <img src="img/cover/img<%= i %>.jpg">
       </a>
     </div>
-    <% } %>                        
-  </div>         
-</div>  
+    <% } %>
+  </div>
+</div>
 
 <div id="main" class="card-style">
 
@@ -82,18 +82,18 @@
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>           
+          <span class="icon-bar"></span>
         </button>
         <a class="logo" href="#">
           <img src="img/logo/logo.png">
-        </a>                 
+        </a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                <img src="img/channels/news.png" class="img-circle channel">
-                French news                        
+                French news
                <span class="icon icon-arrow-down8"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
@@ -104,18 +104,16 @@
           </li>
         </ul>
         <ul class="nav navbar-nav topics">
-          <% for(var i=1; i<6; i++) {%>
+          <% for(var i=1; i < maxTopics; i++) {%>
           <li>
             <a href="#" class="topic  topic-<%= i %> <% if(i == 1) { %>active<% }%>">
-              <span class="word word1"><%= topics[i].keyWords[0] %></span>
-              <span class="word word2"><%= topics[i].keyWords[1] %></span>
-              <span class="word word3"><%= topics[i].keyWords[2] %></span>
+              <span class="word word1"><%= topics[i].getTitle() %></span>
             </a>
-          </li>            
-          <% } %>          
+          </li>
+          <% } %>
         </ul>
         <ul class="nav navbar-nav ranking hidden-sm hidden-md hidden-lg">
-          <div class="rankby">Rank by</div>                
+          <div class="rankby">Rank by</div>
           <li>
             <a href="#">
               <span class="icon icon-star3"></span>
@@ -127,23 +125,22 @@
               <span class="icon icon-retweet"></span>
               <span class="text">By retweets</span>
             </a>
-          </li>                  
+          </li>
           <li>
             <a href="#">
               <span class="icon icon-clock"></span>
               <span class="text">Chronologically</span>
             </a>
           </li>
-        </ul>            
+        </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
   </div>
 
   <div class="container container-tweets">
-
       <div class="col-sm-12 hidden-xs row-ranking">
         <ul class="nav navbar-nav ranking">
-          <div class="rankby">Rank by</div>                
+          <div class="rankby">Rank by</div>
           <li>
             <a href="#">
               <span class="icon icon-star3"></span>
@@ -155,24 +152,23 @@
               <span class="icon icon-retweet"></span>
               <span class="text">By retweets</span>
             </a>
-          </li>                  
+          </li>
           <li>
             <a href="#">
               <span class="icon icon-clock"></span>
               <span class="text">Chronologically</span>
             </a>
           </li>
-        </ul>            
+        </ul>
       </div>
 
-    <% for(var i=1; i<6; i++) {%>
+    <% for(var i=1; i < maxTopics; i++) {%>
     <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">    
-      
       <div class="row titre">
-        <h1><%= topics[i].keyWords[0] %> <%= topics[i].keyWords[1] %> <%= topics[i].keyWords[2] %></h1>  
-      </div>      
+        <h1><%= topics[i].getTitle() %></h1>
+      </div>
 
-      <% for(var j=1; j<topics[i].tweets.length; j++) {%>     
+      <% for(var j=1; j<topics[i].tweets.length; j++) {%>
       <div class="row tweet">
         <div class="hidden-xs col-sm-2 profile">
           <a href="http://twitter.com/<%= topics[i].tweets[j].userScreenName %>" taget="blank">
@@ -182,29 +178,29 @@
         <div class="col-xs-9 col-sm-8 text card">
           <span class="nom"><%= topics[i].tweets[j].userName %>  </span><span class="handle"><a href="http://twitter.com/<%= topics[i].tweets[j].userScreenName %>">@<%= topics[i].tweets[j].userScreenName %></a></span>
           <p class="content">
-            <%= topics[i].tweets[j].text %>            
+            <%= topics[i].tweets[j].text %>
           </p>
           <% if (topics[i].tweets[j].imageUrl) { %><img src="<%= topics[i].tweets[j].imageUrl %>"><% } %>
         </div>
         <div class="col-xs-3 col-sm-2 numbers">
           <a href="" class="number">
-            <span class="value"><%= topics[i].tweets[j].retweetCount %></span>                
+            <span class="value"><%= topics[i].tweets[j].retweetCount %></span>
             <span class="icon icon-retweet"></span>
           </a>
           <a href=""  class="number">
             <span class="value"><%= topics[i].tweets[j].favoriteCount %></span>
             <span class="icon icon-star3"></span>
-          </a>      
+          </a>
           <div class="number inverse date">
             <span class="value"><%= topics[i].tweets[j].createdAt %></span>
-            <span class="icon icon-clock"></span>            
-          </div>                    
+            <span class="icon icon-clock"></span>
+          </div>
         </div>
-      </div>    
+      </div>
       <% } %>
 
-    </div>        
-    <% } %>                                            
+    </div>
+    <% } %>                        
 
   </div>
 </div>

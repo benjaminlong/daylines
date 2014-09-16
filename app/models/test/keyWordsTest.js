@@ -23,22 +23,20 @@ describe('--------- keyWords ---------', function () {
 	dataset = dataset.concat(dataset_2);
 	dataset = dataset.concat(dataset_3);
 
+	// console.log(dataset);
+
 	// --------------------------------------------------------------------------
 	it('** TOTO a la plage **', function () {
 		keyWords.computeKeyWordsFromTweets(dataset);
 		var currentkeyWords = keyWords.getKeyWords();
 
-		// for (var key in currentkeyWords) {
-		// 	console.log(key);
-		// 	console.log(currentkeyWords[key]['value']);
-		// 	console.log(currentkeyWords[key]['tweets']);
-		// }
-
 		var merged = keyWords.mergeKeyWords();
 
-        var topics = keyWords.createTopics(merged);
-
-        console.log(topics);
+		for (var i = 0; i < merged.length; i++) {
+			for (var j = 0; j < merged[i].length; j++) {
+				var key = merged[i][j];
+			}
+		};
 
 	});
 });

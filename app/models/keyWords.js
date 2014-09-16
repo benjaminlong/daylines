@@ -4,7 +4,6 @@ var Topic = require('./topic');
 
 // ----------------------------------------------------------------------------
 function KeyWords () {
-  
 	this.keyWords = {}; // { key : { weight: 1, tweets: [] }}
 	this.filterValue = 10;
 }
@@ -21,6 +20,7 @@ KeyWords.prototype.getFilterValue = function () {
 
 // ----------------------------------------------------------------------------
 KeyWords.prototype.computeKeyWordsFromTweets = function (dataset) {
+
 	for (var i = 0; i < dataset.length; i++) {
 		var newTweet = new Tweet()
 		newTweet.init(dataset[i]);
@@ -67,7 +67,7 @@ KeyWords.prototype.getKeyWords = function() {
 
 // ----------------------------------------------------------------------------
 KeyWords.prototype.mergeKeyWords = function () {
-	var topic = []; // { [], [], [] }
+	var topic = [];
 
 	var copy = this.keyWords
 ;

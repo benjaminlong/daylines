@@ -5,6 +5,10 @@ var fs = require("fs");
 var Twitter = require('twitter-js-client').Twitter;
 var KeyWords = require('../models/keyWords');
 
+var LRU = require("lru-cache")
+  , options = { maxAge: 12000 * 60 * 60 }
+  , cache = LRU(options)
+  , otherCache = LRU(50) // sets just the max size
 
 module.exports = function (app) {
   app.use('/', router);
@@ -13,46 +17,44 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
 
     var keyWords = new KeyWords();
-    keyWords.setFilterValue(10);
+    keyWords.setFilterValue(12);
 
-    var dataset_0 = JSON.parse(fs.readFileSync('./config/dataset_0.json', encoding="ascii"));
-    var dataset_1 = JSON.parse(fs.readFileSync('./config/dataset_1.json', encoding="ascii"));
-    var dataset_2 = JSON.parse(fs.readFileSync('./config/dataset_2.json', encoding="ascii"));
-    var dataset_3 = JSON.parse(fs.readFileSync('./config/dataset_3.json', encoding="ascii"));
+    if (cache.has('frenchDataset')) {
+        var dataset = cache.get('frenchDataset');
+    }
+    else {
+        var dataset = [];
+        cache.set('frenchDataset', dataset);
+        var config = JSON.parse(fs.readFileSync('./config/twitter.js'), encoding="ascii");
+        var twitter = new Twitter(config);
 
-    var dataset = [];
-    dataset = dataset.concat(dataset_0);
-    dataset = dataset.concat(dataset_1);
-    dataset = dataset.concat(dataset_2);
-    dataset = dataset.concat(dataset_3);
+        var twitterUsernames = JSON.parse(fs.readFileSync('./config/frenchNews.json'), encoding="ascii");
+
+        var error = function (err, response, body) {
+          console.log('ERROR [%s]', err);
+        };
+        var success = function (data) {
+          // fs.writeFile('./config/' + name + '.json', data, encoding='ascii');
+          var dataset = cache.get('frenchDataset');
+          cache.set('frenchDataset', dataset.concat(JSON.parse(data)));
+        };
+
+        for (var i = 0; i < twitterUsernames.length; i ++) {
+            twitterUsername = twitterUsernames[i];
+            twitter.getUserTimeline(
+              { screen_name: twitterUsernames[i], count: '100'}, error, success);
+        }
+    }
 
     keyWords.computeKeyWordsFromTweets(dataset);
     var merged = keyWords.mergeKeyWords();
     var topics = keyWords.createTopics(merged);
 
-    console.log("**************************************************");
-    console.log("topics : ");
-    console.log(topics);
+    var maxTopics = topics.length > 6 ? 6 : topics.length;
 
     res.render('index', {
       title: 'daylines',
-      topics: topics
+      topics: topics,
+      maxTopics: maxTopics
     });
-
-
-    // var twitter = new Twitter(config);
-
-  // console.log(twitter);
-
- //  var error = function (err, response, body) {
- //    console.log('ERROR [%s]', err);
- //  };
- //  var success = function (data) {
-	// console.log('Data [%s]', data);
- //  };
-
- //  twitter.getUserTimeline(
- //  	{ screen_name: 'Le_Figaro', count: '50'}, error, success);
-
-
 });

@@ -6,6 +6,7 @@ function Topic (opts) {
   
 	this.tweets = [];
 	this.keyWords = [];
+	this.imageUrl = '';
 }
 
 // ----------------------------------------------------------------------------
@@ -64,6 +65,11 @@ Topic.prototype.setKeyWords = function (keyWords) {
 // ----------------------------------------------------------------------------
 Topic.prototype.getKeyWords = function () {
 	return this.keyWords;
+}
+
+// ----------------------------------------------------------------------------
+Topic.prototype.getTitle = function () {
+	return this.keyWords.join(' ');
 }
 
 // ----------------------------------------------------------------------------

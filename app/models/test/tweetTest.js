@@ -18,11 +18,11 @@ describe('#tweet', function () {
 
 	// --------------------------------------------------------------------------
 	it('** stemmed words **', function () {
-		tweet.setText('agreablement agreable akreabl toujours tjours tjr');
+		tweet.setText('agreablement agreable toujours tjr');
 
 		tweet.computeSteemedWords();
 
-		expect(tweet.getStemmedWords()).to.eql({'AKRBL' : 3, 'TJR' : 2 });
+		expect(tweet.getStemmedWords()).to.eql({'agreabl' : 2 });
 	});
 
 	var dataTest = JSON.parse(fs.readFileSync('./config/exemple.json', encoding="ascii"));
@@ -37,9 +37,12 @@ describe('#tweet', function () {
 		expect(tweet.getCreatedAt()).equal('Fri Aug 22 21:48:43 +0000 2014');
 		expect(tweet.getFavoriteCount()).equal(0);
 		expect(tweet.getRetweetCount()).equal(3);
+		expect(tweet.getUserName()).equal('Le Figaro');
+		expect(tweet.getUserImageUrl()).equal(
+			'http://pbs.twimg.com/profile_images/502075046278340608/Pr4QUAKy_normal.jpeg');
 
 		expect(tweet.getStemmedWords()).to.eql(
-			{"ALMN": 1, "KNBL": 1, "PLS": 1});
+			{"allemagn": 1, "cannibal": 1, "polici": 1});
 
 	});
 
