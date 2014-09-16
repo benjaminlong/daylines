@@ -80,18 +80,6 @@ Tweet.prototype.getUserScreenName = function () {
 	return this.userScreenName;
 }
 
-
-// ----------------------------------------------------------------------------
-Tweet.prototype.setUserImageUrl= function (text) {
-	this.userImageUrl= text
-	return this;
-}
-
-// ----------------------------------------------------------------------------
-Tweet.prototype.getUserImageUrl= function () {
-	return this.userImageUrl;
-}
-
 // ----------------------------------------------------------------------------
 Tweet.prototype.setImageUrl= function (text) {
 	this.imageUrl= text
@@ -111,7 +99,7 @@ Tweet.prototype.setText = function (text) {
 
 // ----------------------------------------------------------------------------
 Tweet.prototype.getText = function () {
-	var text = addlinks(this.text);
+	// var text = addlinks(this.text);
 	return this.text;
 }
 
@@ -124,6 +112,17 @@ Tweet.prototype.setCreatedAt = function (date) {
 // ----------------------------------------------------------------------------
 Tweet.prototype.getCreatedAt = function () {
 	return this.createdAt;
+}
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.setUserImageUrl = function (url) {
+	this.userImageUrl = url;
+	return this;
+}
+
+// ----------------------------------------------------------------------------
+Tweet.prototype.getUserImageUrl = function () {
+	return this.userImageUrl;
 }
 
 // ----------------------------------------------------------------------------
