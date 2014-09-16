@@ -15,7 +15,8 @@
     "method-override": "~2.1.1",
     "ejs": "~1.0.0",
     "twitter-js-client": "*",
-    "natural": "~0.1"
+    "natural": "~0.1",
+    "lru-cache": "2.5.*"
   },
   "devDependencies": {
     "blanket": "^1.1.6",
