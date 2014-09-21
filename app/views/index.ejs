@@ -48,7 +48,15 @@
     <% } %>"
     id="<%= i %>">
       <span class="rank"><%= i %></span>
-      <h1><%= topics[i].getTitle() %></h1>
+      <h1>
+        <%= topics[i].keyWords[0] %> 
+        <% if(topics[i].keyWords[1]) { %>
+          <%= topics[i].keyWords[1] %>
+          <% if(topics[i].keyWords[2]) { %>
+            <%= topics[i].keyWords[2] %>
+          <% } %>
+        <% } %>
+      </h1> 
       <p>Description détaillée, premier synopsis de l'article du monde (par exemple)</p>
       <button class="btn btn-daily" onclick="$('html, body').animate({scrollTop: $('#main').offset().top}, 350);">
         More on this <span class="icon icon-arrow-down3"></span>
@@ -64,7 +72,15 @@
     <% for(var i=1; i < maxTopics; i++) { %>
     <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">
       <a href="#">
-        <div class="text"><%= topics[i].getTitle() %></div>
+        <div class="text">
+          <%= topics[i].keyWords[0] %> 
+          <% if(topics[i].keyWords[1]) { %>
+            <%= topics[i].keyWords[1] %>
+            <% if(topics[i].keyWords[2]) { %>
+              <%= topics[i].keyWords[2] %>
+            <% } %>
+          <% } %>
+        </div>
         <div class="shadow"></div>
         <img src="img/cover/img<%= i %>.jpg">
       </a>
@@ -107,7 +123,9 @@
           <% for(var i=1; i < maxTopics; i++) {%>
           <li>
             <a href="#" class="topic  topic-<%= i %> <% if(i == 1) { %>active<% }%>">
-              <span class="word word1"><%= topics[i].getTitle() %></span>
+              <span class="word word1"><%= topics[i].keyWords[0] %></span>
+              <span class="word word2"><% if(topics[i].keyWords[1]) { %><%= topics[i].keyWords[1] %><% } %></span>
+              <span class="word word3"><% if(topics[i].keyWords[2]) { %><%= topics[i].keyWords[2] %><% } %></span>
             </a>
           </li>
           <% } %>
@@ -165,7 +183,15 @@
     <% for(var i=1; i < maxTopics; i++) {%>
     <div class="topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">    
       <div class="row titre">
-        <h1><%= topics[i].getTitle() %></h1>
+        <h1>
+          <%= topics[i].keyWords[0] %> 
+          <% if(topics[i].keyWords[1]) { %>
+            <%= topics[i].keyWords[1] %>
+            <% if(topics[i].keyWords[2]) { %>
+              <%= topics[i].keyWords[2] %>
+            <% } %>
+          <% } %>
+        </h1>  
       </div>
 
       <% for(var j=1; j<topics[i].tweets.length; j++) {%>
