@@ -1,7 +1,8 @@
 // Variables persos
 @widthTopic :20%;
 @height-header:@navbar-height;
-@height-image-section:100px;
+@height-image-section-normal:100px;
+@height-image-section-xs:50px;
 @height-img-active-indicator:7px;
 @margin-logo:15px;
 
@@ -101,6 +102,7 @@
 	.summary{
 		display: inline-block;
 		width: @width-summary;
+		max-width: 80%;
 		padding: 50px @padding-summary @padding-summary @padding-summary;
 		font-family: @font-family-serif;
 		background-color: white;
@@ -158,14 +160,34 @@
 	}
 }
 
+@media (min-width: @screen-sm-min) {
+	#section-images{
+		height: @height-image-section-normal;
+		margin-top: -@height-image-section-normal;
+	}
+}
+@media (max-width: @screen-sm-min) {
+	#section-images{
+		height: @height-image-section-xs;
+		margin-top: -@height-image-section-xs;
+	}
+}
+
+
 #section-images{
 	position: absolute;
 	width: 100%;
 	top: 100%;	
-	height: @height-image-section;
-	margin-top: -@height-image-section;
 	overflow: hidden;			
 	.box-shadow(0 -2px 3px rgba(0,0,0,.3));
+	font-family: @font-family-serif;
+	.topic{
+		display: inline-block;
+		font-size: 1em;
+		width: @widthTopic;
+		height: 100%;
+		background: white;
+	}	
 	.images {
 		font-size: 0;/*Important, permet d'éviter des gaps entre les images*/
 		position: absolute;
@@ -175,9 +197,6 @@
 		white-space: nowrap;
 		width: 100%;
 		.topic {
-			display: inline-block;
-			font-size: 1em;
-			width: @widthTopic;
 			a{
 				position: relative;
 				display: block;
@@ -196,8 +215,8 @@
 					font-family: @font-family-serif;
 					position: absolute;
 					bottom: 0px;
-					padding-top: @height-image-section /2 - @font-size-base ;
-					height: @height-image-section;
+					padding-top: @height-image-section-normal /2 - @font-size-base ;
+					height: @height-image-section-normal;
 					width: 100%;
 					text-align: center;
 					color: white;
@@ -210,7 +229,7 @@
 					position: absolute;
 					bottom: 0;
 					width: 100%;
-					height: @height-image-section;
+					height: @height-image-section-normal;
 					z-index: 0;
 					display: block;
 					background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.7)));
@@ -240,7 +259,7 @@
 					opacity: 0;
 					background-color: @brand-primary;		
 					.transition(opacity 0.2s ease);
-					bottom: @height-image-section;
+					bottom: @height-image-section-normal;
 					height: @height-img-active-indicator;
 					margin-bottom: -@height-img-active-indicator;						
 				}						
@@ -258,7 +277,35 @@
 				filter: grayscale(1) blur(2px) brightness(0.5);
 			}
 		}
-	}	
+	}
+	.ranks{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		.topic{		
+			text-align: center;
+			cursor: pointer;
+			.number{
+				padding: 2px 30px;
+				font-size: 20px;
+				color: @brand-primary;
+				font-weight: 300;		
+			}
+			.text{
+				font-size: 20px;
+				color: @gray-darker;
+				position: relative;				
+				top: 15px;	
+				text-align: center;
+			}	
+			&.active,&:hover{
+				.number{
+					background-color: @brand-primary;
+					color: white;					
+				}
+			}		
+		}
+	}		
 }	
 
 #navbar{
