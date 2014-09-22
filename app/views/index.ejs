@@ -1,39 +1,39 @@
 <% include header %>
 
-<div id="header" data-0="opacity:1;display:block;" data-400="opacity:0;display:none;">
-    <a class="logo" href="#">
-      <img src="img/logo/logo-white.png">
-    </a>
-    <div class="dropdown">
-      <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-        <span class="pull-right">
-          <img src="img/channels/news.png" class="img-circle channel">
-            French news
-          <span class="icon icon-arrow-down8"></span>           
-        </span>
-      </a>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-        <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="#">
-            <img src="img/channels/sport.png" class="img-circle channel"> Sport
-         </a>
-        </li>
-        <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="#">
-            <img src="img/channels/science.png" class="img-circle channel"> Science
-          </a>
-        </li>
-        <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="#">
-            <img src="img/channels/music.png" class="img-circle channel"> Music
-          </a>
-        </li>
-      </ul>
-    </div>
-</div>
-
 <div id="first-section">
-  <div class="titre" data-0="opacity:1;display:block;margin-top:25vh;" data-400="opacity:0;display:none;margin-top:40vh;">
+  <div class="titre" data-0="opacity:1;margin-top:25vh;" data-400="opacity:0;margin-top:30vh;">
+  
+  <div id="header" >
+      <a class="logo" href="#">
+        <img src="img/logo/logo-white.png">
+      </a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          <span class="pull-right">
+            <img src="img/channels/news.png" class="img-circle channel">
+              French news
+            <span class="icon icon-arrow-down8"></span>           
+          </span>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">
+              <img src="img/channels/sport.png" class="img-circle channel"> Sport
+           </a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">
+              <img src="img/channels/science.png" class="img-circle channel"> Science
+            </a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="#">
+              <img src="img/channels/music.png" class="img-circle channel"> Music
+            </a>
+          </li>
+        </ul>
+      </div>
+  </div>
 
 <% for(var i=1; i < maxTopics; i++) {%>
     <div class="summary topic-<%= i %> topic
@@ -119,11 +119,11 @@
                 French news
                <span class="icon icon-arrow-down8"></span>
             </a>
-            <ul class="dropdown-menu" role="menu">
+            <!-- <ul class="dropdown-menu" role="menu">
               <li><a href="#"><img src="img/channels/sport.png" class="img-circle channel"> Sport</a></li>
               <li><a href="#"><img src="img/channels/science.png" class="img-circle channel"> Science</a></li>
               <li><a href="#"><img src="img/channels/music.png" class="img-circle channel"> Music</a></li>
-            </ul>
+            </ul> -->
           </li>
         </ul>
         <ul class="nav navbar-nav topics">
@@ -241,7 +241,7 @@
 <div id="section-background">
   <% for(var i=1; i<6; i++) {%>
   <div class="background topic topic-<%= i %> <% if(i == 1) { %>active<% }%>">
-    <img  src="img/cover/img<%= i %>blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;">
+    <!-- <img  src="img/cover/img<%= i %>blur.jpg" class="section-background-image blur" data-0="opacity:0;" data-300="opacity:1;"> -->
     <img src="img/cover/img<%= i %>.jpg" class="section-background-image net">     
   </div>           
   <% } %>           
@@ -293,17 +293,17 @@ $('.dropdown').on('hide.bs.dropdown', function(e){
       //On va slider vers la droite, et on commence par se placer sur le summary actif
       
       //On met à gauche tous les élements précedents : left-hidden
-      $('.topic-'+goal+'.summary').prevAll('.summary').removeClass('left left-hidden active right right-hidden').addClass('left-hidden');
+      $('.topic-'+goal+'.summary').prevAll('.summary').removeClass('left active right right-hidden').addClass('left-hidden');
       //Le premier élément à gauche est mis en  left
-      $('.topic-'+goal+'.summary').prev('.summary').removeClass('left left-hidden active right right-hidden').addClass('left');
+      $('.topic-'+goal+'.summary').prev('.summary').removeClass('left-hidden').addClass('left');
 
       //On centre le summary
       $('.topic-'+goal+'.summary').removeClass('left left-hidden active right right-hidden').addClass('active');
 
       //On met à droite tous les élements suivant : right-hidden
-      $('.topic-'+goal+'.summary').nextAll('.summary').removeClass('left left-hidden active right right-hidden').addClass('right-hidden');
+      $('.topic-'+goal+'.summary').nextAll('.summary').removeClass('left left-hidden active right').addClass('right-hidden');
       //Le premier élément à gauche est mis en  left
-      $('.topic-'+goal+'.summary').next('.summary').removeClass('left left-hidden active right right-hidden').addClass('right');
+      $('.topic-'+goal+'.summary').next('.summary').removeClass('right-hidden').addClass('right');
 
       //On change tous les attributs active (#summary, #images, #navbar,  #background)
       $('.topic').removeClass('active');
@@ -322,7 +322,6 @@ $(document).keydown(function(e) {
     switch(e.which) {
 
         case 37: 
-          console.log('left');
             var goal = $('.summary.active').attr('id')-1;
             if (goal<1){break;}
             else if (goal>5){break;}
@@ -341,7 +340,6 @@ $(document).keydown(function(e) {
 
         case 40: // down
           offset= $('#navbar').position().top;
-          console.log(offset);
           if (offset>0){
             $('html, body').animate({scrollTop: $('#main').offset().top}, 350);
             break;
@@ -350,7 +348,6 @@ $(document).keydown(function(e) {
 
         default: return; // exit this handler for other keys
     }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 
 
@@ -391,7 +388,6 @@ function parseTwitterDate(tdate) {
         system_date = Date.parse(tdate.replace(/( \+)/, ' UTC$1'))
     }
     var diff = Math.floor((user_date - system_date) / 1000);
-    console.log(diff);
     if (diff <= 1) {return "à l'instant";}
     if (diff < 20) {return "il y a " + diff + " secondes";}
     if (diff < 40) {return "il y a une minute";}
